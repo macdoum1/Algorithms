@@ -11,7 +11,6 @@
 #import "NSArray+MMSorting.h"
 
 @interface AlgorithmsTests : XCTestCase
-@property (nonatomic, strong) NSArray *sortedArray;
 @property (nonatomic, strong) NSArray *unsortedArray;
 @end
 
@@ -20,11 +19,16 @@
 - (void)setUp {
     [super setUp];
     self.unsortedArray = @[@100, @1, @250, @24, @89, @200, @65, @175, @189];
-    self.sortedArray = @[@1, @24, @65, @89, @100, @175, @189, @200, @250];
 }
 
 - (void)tearDown {
     [super tearDown];
+}
+
+- (void)testIsSorted {
+    NSSortDescriptor *sortDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"self" ascending:YES];
+    NSArray *sortedArray = [self.unsortedArray sortedArrayUsingDescriptors:@[sortDescriptor]];
+    XCTAssert([sortedArray isSorted]);
 }
 
 - (void)testMergeSort {
@@ -37,7 +41,7 @@
 
 - (void)testSortWithType:(MMSortType)type {
     NSArray *sortedArray = [self.unsortedArray sortedArrayWithType:type];
-    XCTAssertEqualObjects(sortedArray, self.sortedArray);
+    XCTAssert([sortedArray isSorted]);
 }
 
 @end

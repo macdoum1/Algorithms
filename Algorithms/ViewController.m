@@ -21,8 +21,8 @@
     NSArray *startArray = @[@100, @1, @250, @24, @89, @200, @65, @175, @189];
     
     NSArray *sortedArray = [startArray sortedArrayWithType:MMSortTypeQuick];
-    
-    sortedArray = sortedArray;
+    BOOL isSorted = [sortedArray isSorted];
+    isSorted = isSorted;
 }
 
 

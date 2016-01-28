@@ -14,4 +14,5 @@ typedef NS_ENUM(NSInteger, MMSortType) {
 
 @interface NSArray (MMSorting)
 - (NSArray *)sortedArrayWithType:(MMSortType)type;
+- (BOOL)isSorted;
 @end

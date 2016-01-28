@@ -20,6 +20,23 @@
     }
 }
 
+- (BOOL)isSorted {
+    __block BOOL isSorted = YES;
+    
+    [self enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+        NSInteger nextIndex = idx+1;
+        if(nextIndex < self.count) {
+            id nextObj = self[nextIndex];
+            if([nextObj intValue] < [obj intValue]) {
+                isSorted = NO;
+                *stop = YES;
+            }
+        }
+    }];
+    
+    return isSorted;
+}
+
 #pragma mark - Merge Sort O(n) = n(log(n))
 - (NSArray *)mergeSort {
     if (self.count < 2) {

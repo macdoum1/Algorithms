@@ -8,6 +8,8 @@
 
 #import "NSArray+MMSorting.h"
 
+#import "NSArray+MMFunctional.h"
+
 @implementation NSArray (MMSorting)
 - (NSArray *)sortedArrayWithType:(MMSortType)type {
     switch (type) {
@@ -15,6 +17,10 @@
             return [self mergeSort];
         case MMSortTypeQuick:
             return [self quickSort];
+        case MMSortTypeInsertion:
+            return [self insertionSort];
+        case MMSortTypeBucket:
+            return [self bucketSort];
         default:
             return nil;
     }
@@ -24,10 +30,11 @@
     __block BOOL isSorted = YES;
     
     [self enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
-        NSInteger nextIndex = idx+1;
+        NSUInteger nextIndex = idx+1;
         if(nextIndex < self.count) {
             id nextObj = self[nextIndex];
-            if([nextObj intValue] < [obj intValue]) {
+            NSComparisonResult comparison = [obj compare:nextObj];
+            if(comparison == NSOrderedDescending) {
                 isSorted = NO;
                 *stop = YES;
             }
@@ -43,7 +50,7 @@
         return self;
     }
     
-    NSInteger middlePivot = self.count/2;
+    NSUInteger middlePivot = self.count/2;
     NSRange rangeLeft = NSMakeRange(0, middlePivot);
     NSRange rangeRight = NSMakeRange(middlePivot, self.count-middlePivot);
     NSArray *leftArray = [self subarrayWithRange:rangeLeft];
@@ -54,13 +61,14 @@
 
 - (NSArray *)mergeWithArray:(NSArray *)rightArray {
     NSMutableArray *orderedArray = [NSMutableArray array];
-    NSInteger indexLeft = 0;
-    NSInteger indexRight = 0;
+    NSUInteger indexLeft = 0;
+    NSUInteger indexRight = 0;
     
     while(indexLeft < self.count && indexRight < rightArray.count) {
-        if ([self[indexLeft] intValue] < [rightArray[indexRight] intValue]) {
+        NSComparisonResult comparison = [self[indexLeft] compare:rightArray[indexRight]];
+        if (comparison == NSOrderedAscending) {
             [orderedArray addObject:self[indexLeft++]];
-        } else if ([self[indexLeft] intValue] > [rightArray[indexRight] intValue]) {
+        } else if (comparison == NSOrderedDescending) {
             [orderedArray addObject:rightArray[indexRight++]];
         } else {
             [orderedArray addObject:self[indexLeft++]];
@@ -84,12 +92,13 @@
         return nil;
     }
     
-    NSInteger randomPivot = arc4random() % self.count;
+    NSUInteger randomPivot = arc4random() % self.count;
     id pivotValue = self[randomPivot];
     [self enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
-        if([obj intValue] < [pivotValue intValue]) {
+        NSComparisonResult comparison = [obj compare:pivotValue];
+        if(comparison == NSOrderedAscending) {
             [lessArray addObject:obj];
-        } else if([obj intValue] > [pivotValue intValue]) {
+        } else if(idx != randomPivot) {
             [greaterArray addObject:obj];
         }
     }];
@@ -99,5 +108,47 @@
     [sortedArray addObject:pivotValue];
     [sortedArray addObjectsFromArray:[greaterArray quickSort]];
     return sortedArray;
+}
+
+#pragma mark - Insertion Sort
+- (NSArray *)insertionSort {
+    NSMutableArray *array = [NSMutableArray arrayWithArray:self];
+    for(NSUInteger i=1; i < array.count; i++) {
+        NSUInteger j = i;
+        id target = array[i];
+        while(j > 0 && [target compare:array[j-1]] == NSOrderedAscending) {
+            [array exchangeObjectAtIndex:j withObjectAtIndex:j-1];
+            j--;
+        }
+        [array replaceObjectAtIndex:j withObject:target];
+    }
+    return array;
+}
+
+#pragma mark - Bucket Sort
+- (NSArray *)bucketSort {
+    __block NSInteger minValue = NSIntegerMax;
+    __block NSInteger maxValue = NSIntegerMin;
+    [self enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+        NSInteger objVal = [obj intValue];
+        if(objVal < minValue) {
+            minValue = objVal;
+        } else if(objVal > maxValue) {
+            maxValue = objVal;
+        }
+    }];
+    
+    NSInteger numOfBuckets = maxValue - minValue + 1;
+    NSMutableArray <NSMutableArray *> *buckets = [NSMutableArray arrayWithCapacity:numOfBuckets];
+    for(NSUInteger i=0; i<numOfBuckets; i++) {
+        buckets[i] = [NSMutableArray array];
+    }
+    
+    [self enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+        NSInteger objVal = [obj intValue];
+        [buckets[(objVal - minValue)] addObject:obj];
+    }];
+    
+    return [buckets flattenArray];
 }
 @end

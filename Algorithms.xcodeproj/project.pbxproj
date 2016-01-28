@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D88C73891C5AA84B00E9217B /* NSArray+MMSearch.m in Sources */ = {isa = PBXBuildFile; fileRef = D88C73881C5AA84B00E9217B /* NSArray+MMSearch.m */; };
+		D88C738B1C5AABED00E9217B /* MMSearchTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D88C738A1C5AABED00E9217B /* MMSearchTests.m */; };
+		D88C738F1C5AB8D900E9217B /* MMTreeNode.m in Sources */ = {isa = PBXBuildFile; fileRef = D88C738E1C5AB8D900E9217B /* MMTreeNode.m */; };
 		D8F6922C1C59689D00B08CB5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D8F6922B1C59689D00B08CB5 /* main.m */; };
 		D8F6922F1C59689D00B08CB5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D8F6922E1C59689D00B08CB5 /* AppDelegate.m */; };
 		D8F692321C59689D00B08CB5 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8F692311C59689D00B08CB5 /* ViewController.m */; };
@@ -17,6 +20,12 @@
 		D8F692501C59689D00B08CB5 /* AlgorithmsUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = D8F6924F1C59689D00B08CB5 /* AlgorithmsUITests.m */; };
 		D8F6925F1C5968B500B08CB5 /* NSArray+MMSorting.m in Sources */ = {isa = PBXBuildFile; fileRef = D8F6925E1C5968B500B08CB5 /* NSArray+MMSorting.m */; };
 		D8F692601C5A65DA00B08CB5 /* NSArray+MMSorting.m in Sources */ = {isa = PBXBuildFile; fileRef = D8F6925E1C5968B500B08CB5 /* NSArray+MMSorting.m */; };
+		D8F692631C5A70C200B08CB5 /* NSArray+MMRandom.m in Sources */ = {isa = PBXBuildFile; fileRef = D8F692621C5A70C200B08CB5 /* NSArray+MMRandom.m */; };
+		D8F692661C5A714900B08CB5 /* NSNumber+MMRandom.m in Sources */ = {isa = PBXBuildFile; fileRef = D8F692651C5A714900B08CB5 /* NSNumber+MMRandom.m */; };
+		D8F692691C5A7BE600B08CB5 /* NSArray+MMFunctional.m in Sources */ = {isa = PBXBuildFile; fileRef = D8F692681C5A7BE600B08CB5 /* NSArray+MMFunctional.m */; };
+		D8F6926D1C5A951B00B08CB5 /* MMFunctionalTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D8F6926C1C5A951B00B08CB5 /* MMFunctionalTests.m */; };
+		D8F6926F1C5A966D00B08CB5 /* MMRandomArrayTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D8F6926E1C5A966D00B08CB5 /* MMRandomArrayTests.m */; };
+		D8F692711C5A970500B08CB5 /* MMRandomNumberTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D8F692701C5A970500B08CB5 /* MMRandomNumberTests.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,6 +46,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D88C73871C5AA84B00E9217B /* NSArray+MMSearch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+MMSearch.h"; sourceTree = "<group>"; };
+		D88C73881C5AA84B00E9217B /* NSArray+MMSearch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+MMSearch.m"; sourceTree = "<group>"; };
+		D88C738A1C5AABED00E9217B /* MMSearchTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMSearchTests.m; sourceTree = "<group>"; };
+		D88C738D1C5AB8D900E9217B /* MMTreeNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMTreeNode.h; sourceTree = "<group>"; };
+		D88C738E1C5AB8D900E9217B /* MMTreeNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMTreeNode.m; sourceTree = "<group>"; };
 		D8F692271C59689D00B08CB5 /* Algorithms.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Algorithms.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8F6922B1C59689D00B08CB5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D8F6922D1C59689D00B08CB5 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -55,6 +69,15 @@
 		D8F692511C59689D00B08CB5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D8F6925D1C5968B500B08CB5 /* NSArray+MMSorting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+MMSorting.h"; sourceTree = "<group>"; };
 		D8F6925E1C5968B500B08CB5 /* NSArray+MMSorting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+MMSorting.m"; sourceTree = "<group>"; };
+		D8F692611C5A70C200B08CB5 /* NSArray+MMRandom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+MMRandom.h"; sourceTree = "<group>"; };
+		D8F692621C5A70C200B08CB5 /* NSArray+MMRandom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+MMRandom.m"; sourceTree = "<group>"; };
+		D8F692641C5A714900B08CB5 /* NSNumber+MMRandom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNumber+MMRandom.h"; sourceTree = "<group>"; };
+		D8F692651C5A714900B08CB5 /* NSNumber+MMRandom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSNumber+MMRandom.m"; sourceTree = "<group>"; };
+		D8F692671C5A7BE600B08CB5 /* NSArray+MMFunctional.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+MMFunctional.h"; sourceTree = "<group>"; };
+		D8F692681C5A7BE600B08CB5 /* NSArray+MMFunctional.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+MMFunctional.m"; sourceTree = "<group>"; };
+		D8F6926C1C5A951B00B08CB5 /* MMFunctionalTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMFunctionalTests.m; sourceTree = "<group>"; };
+		D8F6926E1C5A966D00B08CB5 /* MMRandomArrayTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMRandomArrayTests.m; sourceTree = "<group>"; };
+		D8F692701C5A970500B08CB5 /* MMRandomNumberTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMRandomNumberTests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +105,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D88C738C1C5AB8B400E9217B /* Data Structures */ = {
+			isa = PBXGroup;
+			children = (
+				D88C738D1C5AB8D900E9217B /* MMTreeNode.h */,
+				D88C738E1C5AB8D900E9217B /* MMTreeNode.m */,
+			);
+			name = "Data Structures";
+			sourceTree = "<group>";
+		};
 		D8F6921E1C59689D00B08CB5 = {
 			isa = PBXGroup;
 			children = (
@@ -110,8 +142,8 @@
 				D8F692301C59689D00B08CB5 /* ViewController.h */,
 				D8F692311C59689D00B08CB5 /* ViewController.m */,
 				D8F692331C59689D00B08CB5 /* Main.storyboard */,
-				D8F6925D1C5968B500B08CB5 /* NSArray+MMSorting.h */,
-				D8F6925E1C5968B500B08CB5 /* NSArray+MMSorting.m */,
+				D88C738C1C5AB8B400E9217B /* Data Structures */,
+				D8F692721C5A9A8200B08CB5 /* Categories */,
 				D8F692361C59689D00B08CB5 /* Assets.xcassets */,
 				D8F692381C59689D00B08CB5 /* LaunchScreen.storyboard */,
 				D8F6923B1C59689D00B08CB5 /* Info.plist */,
@@ -131,7 +163,7 @@
 		D8F692431C59689D00B08CB5 /* AlgorithmsTests */ = {
 			isa = PBXGroup;
 			children = (
-				D8F692441C59689D00B08CB5 /* MMSortTests.m */,
+				D8F692731C5A9A8E00B08CB5 /* Category Tests */,
 				D8F692461C59689D00B08CB5 /* Info.plist */,
 			);
 			path = AlgorithmsTests;
@@ -144,6 +176,35 @@
 				D8F692511C59689D00B08CB5 /* Info.plist */,
 			);
 			path = AlgorithmsUITests;
+			sourceTree = "<group>";
+		};
+		D8F692721C5A9A8200B08CB5 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				D88C73871C5AA84B00E9217B /* NSArray+MMSearch.h */,
+				D88C73881C5AA84B00E9217B /* NSArray+MMSearch.m */,
+				D8F6925D1C5968B500B08CB5 /* NSArray+MMSorting.h */,
+				D8F6925E1C5968B500B08CB5 /* NSArray+MMSorting.m */,
+				D8F692671C5A7BE600B08CB5 /* NSArray+MMFunctional.h */,
+				D8F692681C5A7BE600B08CB5 /* NSArray+MMFunctional.m */,
+				D8F692611C5A70C200B08CB5 /* NSArray+MMRandom.h */,
+				D8F692621C5A70C200B08CB5 /* NSArray+MMRandom.m */,
+				D8F692641C5A714900B08CB5 /* NSNumber+MMRandom.h */,
+				D8F692651C5A714900B08CB5 /* NSNumber+MMRandom.m */,
+			);
+			name = Categories;
+			sourceTree = "<group>";
+		};
+		D8F692731C5A9A8E00B08CB5 /* Category Tests */ = {
+			isa = PBXGroup;
+			children = (
+				D8F692441C59689D00B08CB5 /* MMSortTests.m */,
+				D88C738A1C5AABED00E9217B /* MMSearchTests.m */,
+				D8F6926C1C5A951B00B08CB5 /* MMFunctionalTests.m */,
+				D8F6926E1C5A966D00B08CB5 /* MMRandomArrayTests.m */,
+				D8F692701C5A970500B08CB5 /* MMRandomNumberTests.m */,
+			);
+			name = "Category Tests";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -276,8 +337,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D88C738F1C5AB8D900E9217B /* MMTreeNode.m in Sources */,
+				D8F692661C5A714900B08CB5 /* NSNumber+MMRandom.m in Sources */,
+				D88C73891C5AA84B00E9217B /* NSArray+MMSearch.m in Sources */,
+				D8F692631C5A70C200B08CB5 /* NSArray+MMRandom.m in Sources */,
 				D8F692321C59689D00B08CB5 /* ViewController.m in Sources */,
 				D8F6925F1C5968B500B08CB5 /* NSArray+MMSorting.m in Sources */,
+				D8F692691C5A7BE600B08CB5 /* NSArray+MMFunctional.m in Sources */,
 				D8F6922F1C59689D00B08CB5 /* AppDelegate.m in Sources */,
 				D8F6922C1C59689D00B08CB5 /* main.m in Sources */,
 			);
@@ -287,7 +353,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D8F6926F1C5A966D00B08CB5 /* MMRandomArrayTests.m in Sources */,
+				D8F692711C5A970500B08CB5 /* MMRandomNumberTests.m in Sources */,
 				D8F692451C59689D00B08CB5 /* MMSortTests.m in Sources */,
+				D88C738B1C5AABED00E9217B /* MMSearchTests.m in Sources */,
+				D8F6926D1C5A951B00B08CB5 /* MMFunctionalTests.m in Sources */,
 				D8F692601C5A65DA00B08CB5 /* NSArray+MMSorting.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -506,6 +576,7 @@
 				D8F692561C59689D00B08CB5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D8F692571C59689D00B08CB5 /* Build configuration list for PBXNativeTarget "AlgorithmsTests" */ = {
 			isa = XCConfigurationList;
@@ -514,6 +585,7 @@
 				D8F692591C59689D00B08CB5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D8F6925A1C59689D00B08CB5 /* Build configuration list for PBXNativeTarget "AlgorithmsUITests" */ = {
 			isa = XCConfigurationList;
@@ -522,6 +594,7 @@
 				D8F6925C1C59689D00B08CB5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

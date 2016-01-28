@@ -9,7 +9,9 @@
 #import <Foundation/Foundation.h>
 typedef NS_ENUM(NSInteger, MMSortType) {
     MMSortTypeMerge,
-    MMSortTypeQuick
+    MMSortTypeQuick,
+    MMSortTypeInsertion,
+    MMSortTypeBucket
 };
 
 @interface NSArray (MMSorting)

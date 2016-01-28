@@ -9,6 +9,11 @@
 #import <XCTest/XCTest.h>
 
 #import "NSArray+MMSorting.h"
+#import "NSArray+MMRandom.h"
+
+static const NSInteger kNumOfElements = 5000;
+static const NSInteger kMinValue = 0;
+static const NSInteger kMaxValue = 10000;
 
 @interface AlgorithmsTests : XCTestCase
 @property (nonatomic, strong) NSArray *unsortedArray;
@@ -18,30 +23,47 @@
 
 - (void)setUp {
     [super setUp];
-    self.unsortedArray = @[@100, @1, @250, @24, @89, @200, @65, @175, @189];
+    self.unsortedArray = [NSArray randomIntArrayWithSize:kNumOfElements
+                                           valuesBetween:kMinValue
+                                                      to:kMaxValue];
 }
 
-- (void)tearDown {
-    [super tearDown];
+- (NSArray *)cocoaSortedArray {
+    NSSortDescriptor *sortDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"self" ascending:YES];
+    return [self.unsortedArray sortedArrayUsingDescriptors:@[sortDescriptor]];
 }
 
 - (void)testIsSorted {
-    NSSortDescriptor *sortDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"self" ascending:YES];
-    NSArray *sortedArray = [self.unsortedArray sortedArrayUsingDescriptors:@[sortDescriptor]];
-    XCTAssert([sortedArray isSorted]);
+    XCTAssert([[self cocoaSortedArray] isSorted]);
 }
 
 - (void)testMergeSort {
-    [self testSortWithType:MMSortTypeMerge];
+    [self measureBlock:^{
+        [self testSortWithType:MMSortTypeMerge];
+    }];
 }
 
 - (void)testQuickSort {
-    [self testSortWithType:MMSortTypeQuick];
+    [self measureBlock:^{
+        [self testSortWithType:MMSortTypeQuick];
+    }];
+}
+
+- (void)testInsertionSort {
+    [self measureBlock:^{
+        [self testSortWithType:MMSortTypeInsertion];
+    }];
+}
+
+- (void)testBucketSort {
+    [self measureBlock:^{
+        [self testSortWithType:MMSortTypeBucket];
+    }];
 }
 
 - (void)testSortWithType:(MMSortType)type {
-    NSArray *sortedArray = [self.unsortedArray sortedArrayWithType:type];
-    XCTAssert([sortedArray isSorted]);
+    NSArray *sortedArrayToTest = [self.unsortedArray sortedArrayWithType:type];
+    XCTAssert([sortedArrayToTest isEqualToArray:[self cocoaSortedArray]]);
 }
 
 @end

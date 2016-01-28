@@ -100,14 +100,14 @@
 		D8F692721C5A9A8200B08CB5 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
-				D88C73931C5ACD1400E9217B /* NSArray+MMFunctional.h */,
-				D88C73941C5ACD1400E9217B /* NSArray+MMFunctional.m */,
-				D88C73951C5ACD1400E9217B /* NSArray+MMRandom.h */,
-				D88C73961C5ACD1400E9217B /* NSArray+MMRandom.m */,
 				D88C73971C5ACD1400E9217B /* NSArray+MMSearch.h */,
 				D88C73981C5ACD1400E9217B /* NSArray+MMSearch.m */,
 				D88C73991C5ACD1400E9217B /* NSArray+MMSorting.h */,
 				D88C739A1C5ACD1400E9217B /* NSArray+MMSorting.m */,
+				D88C73931C5ACD1400E9217B /* NSArray+MMFunctional.h */,
+				D88C73941C5ACD1400E9217B /* NSArray+MMFunctional.m */,
+				D88C73951C5ACD1400E9217B /* NSArray+MMRandom.h */,
+				D88C73961C5ACD1400E9217B /* NSArray+MMRandom.m */,
 				D88C739B1C5ACD1400E9217B /* NSNumber+MMRandom.h */,
 				D88C739C1C5ACD1400E9217B /* NSNumber+MMRandom.m */,
 			);

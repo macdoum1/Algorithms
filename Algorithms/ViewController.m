@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "NSArray+MMSorting.h"
 
 @interface ViewController ()
 
@@ -16,12 +17,14 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+        
+    NSArray *startArray = @[@100, @1, @250, @24, @89, @200, @65, @175, @189];
+    
+    NSArray *sortedArray = [startArray sortedArrayWithType:MMSortTypeQuick];
+    
+    sortedArray = sortedArray;
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
+
 
 @end

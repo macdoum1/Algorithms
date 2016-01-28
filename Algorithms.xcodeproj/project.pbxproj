@@ -13,8 +13,10 @@
 		D8F692351C59689D00B08CB5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D8F692331C59689D00B08CB5 /* Main.storyboard */; };
 		D8F692371C59689D00B08CB5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D8F692361C59689D00B08CB5 /* Assets.xcassets */; };
 		D8F6923A1C59689D00B08CB5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D8F692381C59689D00B08CB5 /* LaunchScreen.storyboard */; };
-		D8F692451C59689D00B08CB5 /* AlgorithmsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D8F692441C59689D00B08CB5 /* AlgorithmsTests.m */; };
+		D8F692451C59689D00B08CB5 /* MMSortTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D8F692441C59689D00B08CB5 /* MMSortTests.m */; };
 		D8F692501C59689D00B08CB5 /* AlgorithmsUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = D8F6924F1C59689D00B08CB5 /* AlgorithmsUITests.m */; };
+		D8F6925F1C5968B500B08CB5 /* NSArray+MMSorting.m in Sources */ = {isa = PBXBuildFile; fileRef = D8F6925E1C5968B500B08CB5 /* NSArray+MMSorting.m */; };
+		D8F692601C5A65DA00B08CB5 /* NSArray+MMSorting.m in Sources */ = {isa = PBXBuildFile; fileRef = D8F6925E1C5968B500B08CB5 /* NSArray+MMSorting.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,11 +48,13 @@
 		D8F692391C59689D00B08CB5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D8F6923B1C59689D00B08CB5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D8F692401C59689D00B08CB5 /* AlgorithmsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AlgorithmsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		D8F692441C59689D00B08CB5 /* AlgorithmsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AlgorithmsTests.m; sourceTree = "<group>"; };
+		D8F692441C59689D00B08CB5 /* MMSortTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MMSortTests.m; sourceTree = "<group>"; };
 		D8F692461C59689D00B08CB5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D8F6924B1C59689D00B08CB5 /* AlgorithmsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AlgorithmsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8F6924F1C59689D00B08CB5 /* AlgorithmsUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AlgorithmsUITests.m; sourceTree = "<group>"; };
 		D8F692511C59689D00B08CB5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D8F6925D1C5968B500B08CB5 /* NSArray+MMSorting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+MMSorting.h"; sourceTree = "<group>"; };
+		D8F6925E1C5968B500B08CB5 /* NSArray+MMSorting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+MMSorting.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +110,8 @@
 				D8F692301C59689D00B08CB5 /* ViewController.h */,
 				D8F692311C59689D00B08CB5 /* ViewController.m */,
 				D8F692331C59689D00B08CB5 /* Main.storyboard */,
+				D8F6925D1C5968B500B08CB5 /* NSArray+MMSorting.h */,
+				D8F6925E1C5968B500B08CB5 /* NSArray+MMSorting.m */,
 				D8F692361C59689D00B08CB5 /* Assets.xcassets */,
 				D8F692381C59689D00B08CB5 /* LaunchScreen.storyboard */,
 				D8F6923B1C59689D00B08CB5 /* Info.plist */,
@@ -125,7 +131,7 @@
 		D8F692431C59689D00B08CB5 /* AlgorithmsTests */ = {
 			isa = PBXGroup;
 			children = (
-				D8F692441C59689D00B08CB5 /* AlgorithmsTests.m */,
+				D8F692441C59689D00B08CB5 /* MMSortTests.m */,
 				D8F692461C59689D00B08CB5 /* Info.plist */,
 			);
 			path = AlgorithmsTests;
@@ -271,6 +277,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D8F692321C59689D00B08CB5 /* ViewController.m in Sources */,
+				D8F6925F1C5968B500B08CB5 /* NSArray+MMSorting.m in Sources */,
 				D8F6922F1C59689D00B08CB5 /* AppDelegate.m in Sources */,
 				D8F6922C1C59689D00B08CB5 /* main.m in Sources */,
 			);
@@ -280,7 +287,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D8F692451C59689D00B08CB5 /* AlgorithmsTests.m in Sources */,
+				D8F692451C59689D00B08CB5 /* MMSortTests.m in Sources */,
+				D8F692601C5A65DA00B08CB5 /* NSArray+MMSorting.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

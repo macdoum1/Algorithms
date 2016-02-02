@@ -25,52 +25,55 @@
 
 #pragma mark - Preorder Traversal
 - (NSArray *)preOrderTraversal {
-    NSMutableArray *values = [NSMutableArray array];
     if(self.root) {
-        [self preOrderTraversalRecursive:self.root values:values];
+        return [self preOrderTraversalRecursive:self.root];
     }
-    return values;
+    return @[];
 }
 
-- (void)preOrderTraversalRecursive:(MMBinaryTreeNode *)node values:(NSMutableArray *)values {
+- (NSArray *)preOrderTraversalRecursive:(MMBinaryTreeNode *)node {
+    NSMutableArray *values = [NSMutableArray array];
     if(node) {
         [values addObject:node.value];
-        [self preOrderTraversalRecursive:node.leftChild values:values];
-        [self preOrderTraversalRecursive:node.rightChild values:values];
+        [values addObjectsFromArray:[self preOrderTraversalRecursive:node.leftChild]];
+        [values addObjectsFromArray:[self preOrderTraversalRecursive:node.rightChild]];
     }
+    return values;
 }
 
 #pragma mark - Postorder Traversal
 - (NSArray *)postOrderTraversal {
-    NSMutableArray *values = [NSMutableArray array];
     if(self.root) {
-        [self postOrderTraversalRecursive:self.root values:values];
+        return [self postOrderTraversalRecursive:self.root];
     }
-    return values;
+    return @[];
 }
 
-- (void)postOrderTraversalRecursive:(MMBinaryTreeNode *)node values:(NSMutableArray *)values {
+- (NSArray *)postOrderTraversalRecursive:(MMBinaryTreeNode *)node {
+    NSMutableArray *values = [NSMutableArray array];
     if(node) {
-        [self postOrderTraversalRecursive:node.leftChild values:values];
-        [self postOrderTraversalRecursive:node.rightChild values:values];
+        [values addObjectsFromArray:[self postOrderTraversalRecursive:node.leftChild]];
+        [values addObjectsFromArray:[self postOrderTraversalRecursive:node.rightChild]];
         [values addObject:node.value];
     }
+    return values;
 }
 
 #pragma mark - In Order Traversal
 - (NSArray *)inOrderTraversal {
-    NSMutableArray *values = [NSMutableArray array];
     if(self.root) {
-        [self inOrderTraversalRecursive:self.root values:values];
+        return [self inOrderTraversalRecursive:self.root];
     }
-    return values;
+    return @[];
 }
 
-- (void)inOrderTraversalRecursive:(MMBinaryTreeNode *)node values:(NSMutableArray *)values {
+- (NSArray *)inOrderTraversalRecursive:(MMBinaryTreeNode *)node {
+    NSMutableArray *values = [NSMutableArray array];
     if(node) {
-        [self inOrderTraversalRecursive:node.leftChild values:values];
+        [values addObjectsFromArray:[self inOrderTraversalRecursive:node.leftChild]];
         [values addObject:node.value];
-        [self inOrderTraversalRecursive:node.rightChild values:values];
+        [values addObjectsFromArray:[self inOrderTraversalRecursive:node.rightChild]];
     }
+    return values;
 }
 @end

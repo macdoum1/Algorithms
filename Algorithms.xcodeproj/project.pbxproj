@@ -17,7 +17,7 @@
 		D88C73C21C5BB24A00E9217B /* NSArray+MMSorting.m in Sources */ = {isa = PBXBuildFile; fileRef = D88C73C01C5BB24A00E9217B /* NSArray+MMSorting.m */; };
 		D88C73C81C5BB28300E9217B /* NSString+NearbyWords.m in Sources */ = {isa = PBXBuildFile; fileRef = D88C73C71C5BB28300E9217B /* NSString+NearbyWords.m */; };
 		D88C73CA1C5BB35C00E9217B /* MMNearbyWordsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D88C73C91C5BB35C00E9217B /* MMNearbyWordsTests.m */; };
-		D8D92EFC1C5F963600C7A86C /* MMBinaryTree.m in Sources */ = {isa = PBXBuildFile; fileRef = D8D92EFB1C5F963600C7A86C /* MMBinaryTree.m */; };
+		D8D92F081C60313100C7A86C /* MMBinaryTree.m in Sources */ = {isa = PBXBuildFile; fileRef = D8D92F071C60313100C7A86C /* MMBinaryTree.m */; };
 		D8F692451C59689D00B08CB5 /* MMSortTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D8F692441C59689D00B08CB5 /* MMSortTests.m */; };
 		D8F6926D1C5A951B00B08CB5 /* MMFunctionalTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D8F6926C1C5A951B00B08CB5 /* MMFunctionalTests.m */; };
 		D8F6926F1C5A966D00B08CB5 /* MMRandomArrayTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D8F6926E1C5A966D00B08CB5 /* MMRandomArrayTests.m */; };
@@ -42,8 +42,8 @@
 		D88C73C61C5BB28300E9217B /* NSString+NearbyWords.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+NearbyWords.h"; path = "Categories/Misc String Algorithms/NSString+NearbyWords.h"; sourceTree = "<group>"; };
 		D88C73C71C5BB28300E9217B /* NSString+NearbyWords.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+NearbyWords.m"; path = "Categories/Misc String Algorithms/NSString+NearbyWords.m"; sourceTree = "<group>"; };
 		D88C73C91C5BB35C00E9217B /* MMNearbyWordsTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMNearbyWordsTests.m; sourceTree = "<group>"; };
-		D8D92EFA1C5F963600C7A86C /* MMBinaryTree.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMBinaryTree.h; sourceTree = "<group>"; };
-		D8D92EFB1C5F963600C7A86C /* MMBinaryTree.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMBinaryTree.m; sourceTree = "<group>"; };
+		D8D92F061C60313100C7A86C /* MMBinaryTree.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MMBinaryTree.h; path = "Data Structures/MMBinaryTree.h"; sourceTree = "<group>"; };
+		D8D92F071C60313100C7A86C /* MMBinaryTree.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MMBinaryTree.m; path = "Data Structures/MMBinaryTree.m"; sourceTree = "<group>"; };
 		D8F692401C59689D00B08CB5 /* AlgorithmsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AlgorithmsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8F692441C59689D00B08CB5 /* MMSortTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MMSortTests.m; sourceTree = "<group>"; };
 		D8F692461C59689D00B08CB5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -66,8 +66,8 @@
 		D88C738C1C5AB8B400E9217B /* Data Structures */ = {
 			isa = PBXGroup;
 			children = (
-				D8D92EFA1C5F963600C7A86C /* MMBinaryTree.h */,
-				D8D92EFB1C5F963600C7A86C /* MMBinaryTree.m */,
+				D8D92F061C60313100C7A86C /* MMBinaryTree.h */,
+				D8D92F071C60313100C7A86C /* MMBinaryTree.m */,
 				D88C73901C5ACD0600E9217B /* MMBinaryTreeNode.h */,
 				D88C73911C5ACD0600E9217B /* MMBinaryTreeNode.m */,
 			);
@@ -250,9 +250,9 @@
 				D88C73AF1C5ACE4B00E9217B /* MMTreeTests.m in Sources */,
 				D88C73CA1C5BB35C00E9217B /* MMNearbyWordsTests.m in Sources */,
 				D88C73C11C5BB24A00E9217B /* NSArray+MMSearch.m in Sources */,
+				D8D92F081C60313100C7A86C /* MMBinaryTree.m in Sources */,
 				D8F692451C59689D00B08CB5 /* MMSortTests.m in Sources */,
 				D88C73BB1C5BB24300E9217B /* NSArray+MMRandom.m in Sources */,
-				D8D92EFC1C5F963600C7A86C /* MMBinaryTree.m in Sources */,
 				D88C738B1C5AABED00E9217B /* MMSearchTests.m in Sources */,
 				D8F6926D1C5A951B00B08CB5 /* MMFunctionalTests.m in Sources */,
 				D88C73B61C5BB23C00E9217B /* NSArray+MMFunctional.m in Sources */,

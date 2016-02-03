@@ -24,27 +24,23 @@ static const NSInteger kMMArrayAdditionBase = 10;
 @implementation MMArrayAddition
 + (NSArray <NSNumber *> *)addInteger:(NSInteger)integer
                              toArray:(NSArray <NSNumber *> *)array {
-    NSMutableArray *mutArray = [NSMutableArray arrayWithArray:array];
     NSInteger lastColSum = array.lastObject.integerValue + integer;
     if(lastColSum < kMMArrayAdditionBase) {
-        if(mutArray.count > 0) {
-            mutArray[mutArray.count - 1] = [NSNumber numberWithInteger:lastColSum];
+        if(array.count > 0) {
+            NSMutableArray *mutArray = [NSMutableArray arrayWithArray:array];
+            mutArray[mutArray.count - 1] = @(lastColSum);
+            return mutArray;
         } else {
-            [mutArray addObject:[NSNumber numberWithInteger:lastColSum]];
+            return @[@(lastColSum)];
         }
-        return mutArray;
     }
     
     NSInteger lastColVal = lastColSum % kMMArrayAdditionBase;
     NSInteger carryRemaining = lastColSum - lastColVal;
     NSInteger carryToAdd = carryRemaining/kMMArrayAdditionBase;
     
-    NSArray *subarray;
-    if(array.count > 0) {
-    subarray = [array subarrayWithRange:NSMakeRange(0, array.count-1)];
-    } else {
-        subarray = @[];
-    }
+    NSInteger subarrayLength = array.count > 0 ? array.count-1 : 0;
+    NSArray *subarray = [array subarrayWithRange:NSMakeRange(0, subarrayLength)];
     NSMutableArray *arrayToReturn = [NSMutableArray arrayWithArray:[self addInteger:carryToAdd toArray:subarray]];
     [arrayToReturn addObject:@(lastColVal)];
     return arrayToReturn;

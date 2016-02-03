@@ -1,5 +1,5 @@
 //
-//  NSString+NearbyWords.h
+//  NSString+MMNearbyWords.h
 //  Algorithms
 //
 //  Created by Mike MacDougall on 1/29/16.
@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 
 // WIP!
-@interface NSString (NearbyWords)
+@interface NSString (MMNearbyWords)
 - (NSArray <NSString *> *)nearbyWords;
 - (NSArray <NSString *> *)characterStringsInWord;
 @end

@@ -76,4 +76,20 @@
     }
     return values;
 }
+
+- (BOOL)isValidBinaryTree {
+    __block BOOL isValid = YES;
+    NSArray *array = [self inOrderTraversal];
+    [array enumerateObjectsUsingBlock:^(id  _Nonnull value, NSUInteger idx, BOOL * _Nonnull stop) {
+        if(idx+1 < array.count) {
+            id nextValue = array[idx+1];
+            if([value compare:nextValue] != NSOrderedAscending) {
+                isValid = NO;
+                *stop = YES;
+            }
+        }
+    }];
+    
+    return isValid;
+}
 @end

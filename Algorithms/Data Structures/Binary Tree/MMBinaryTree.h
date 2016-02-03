@@ -13,4 +13,5 @@
 - (NSArray *)preOrderTraversal;
 - (NSArray *)postOrderTraversal;
 - (NSArray *)inOrderTraversal;
+- (BOOL)isValidBinaryTree;
 @end

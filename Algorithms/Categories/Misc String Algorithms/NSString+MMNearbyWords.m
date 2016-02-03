@@ -1,16 +1,16 @@
 //
-//  NSString+NearbyWords.m
+//  NSString+MMNearbyWords.m
 //  Algorithms
 //
 //  Created by Mike MacDougall on 1/29/16.
 //  Copyright © 2016 Michael MacDougall. All rights reserved.
 //
 
-#import "NSString+NearbyWords.h"
+#import "NSString+MMNearbyWords.h"
 
 #import <UIKit/UIKit.h>
 
-@implementation NSString (NearbyWords)
+@implementation NSString (MMNearbyWords)
 - (NSArray <NSString *> *)nearbyWords {
     NSMutableArray *nearbyWords = [NSMutableArray array];
     

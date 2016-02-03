@@ -7,7 +7,7 @@
 //
 
 #import <XCTest/XCTest.h>
-#import "NSString+NearbyWords.h"
+#import "NSString+MMNearbyWords.h"
 
 @interface MMNearbyWordsTests : XCTestCase
 

@@ -68,4 +68,16 @@
     XCTAssertEqualObjects(values, targetArray);
 }
 
+- (void)testIsValidBinaryTree {
+    MMBinaryTree *tree = [[MMBinaryTree alloc] init];
+    
+    [tree insertValue:@8];
+    [tree insertValue:@3];
+    [tree insertValue:@11];
+    [tree insertValue:@7];
+    [tree insertValue:@100];
+    
+    XCTAssert([tree isValidBinaryTree]);
+}
+
 @end

@@ -12,6 +12,8 @@
 		D8468DEA1C6173BA000E10D2 /* MMLinkedList.m in Sources */ = {isa = PBXBuildFile; fileRef = D8468DE91C6173BA000E10D2 /* MMLinkedList.m */; };
 		D8468DF01C6176D2000E10D2 /* MMSubarrayUtilityTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D8468DEF1C6176D2000E10D2 /* MMSubarrayUtilityTests.m */; };
 		D8468DF71C617FFF000E10D2 /* MMSubarrayUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = D8468DF61C617FFF000E10D2 /* MMSubarrayUtility.m */; };
+		D8468DFA1C6237F0000E10D2 /* MMArrayAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = D8468DF91C6237F0000E10D2 /* MMArrayAddition.m */; };
+		D8468DFC1C623801000E10D2 /* MMArrayAdditionTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D8468DFB1C623801000E10D2 /* MMArrayAdditionTests.m */; };
 		D84EB0A81C60E83400B86EC0 /* MMLinkedListTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D84EB0A71C60E83400B86EC0 /* MMLinkedListTests.m */; };
 		D88C738B1C5AABED00E9217B /* MMSearchTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D88C738A1C5AABED00E9217B /* MMSearchTests.m */; };
 		D88C73AF1C5ACE4B00E9217B /* MMTreeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D88C73AE1C5ACE4B00E9217B /* MMTreeTests.m */; };
@@ -47,6 +49,9 @@
 		D8468DEF1C6176D2000E10D2 /* MMSubarrayUtilityTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMSubarrayUtilityTests.m; sourceTree = "<group>"; };
 		D8468DF51C617FFF000E10D2 /* MMSubarrayUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MMSubarrayUtility.h; path = Utilities/MMSubarrayUtility.h; sourceTree = "<group>"; };
 		D8468DF61C617FFF000E10D2 /* MMSubarrayUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MMSubarrayUtility.m; path = Utilities/MMSubarrayUtility.m; sourceTree = "<group>"; };
+		D8468DF81C6237F0000E10D2 /* MMArrayAddition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMArrayAddition.h; sourceTree = "<group>"; };
+		D8468DF91C6237F0000E10D2 /* MMArrayAddition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMArrayAddition.m; sourceTree = "<group>"; };
+		D8468DFB1C623801000E10D2 /* MMArrayAdditionTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMArrayAdditionTests.m; sourceTree = "<group>"; };
 		D84EB0A71C60E83400B86EC0 /* MMLinkedListTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMLinkedListTests.m; sourceTree = "<group>"; };
 		D88C738A1C5AABED00E9217B /* MMSearchTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMSearchTests.m; sourceTree = "<group>"; };
 		D88C73AE1C5ACE4B00E9217B /* MMTreeTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMTreeTests.m; sourceTree = "<group>"; };
@@ -111,6 +116,8 @@
 		D8468DF11C617FCF000E10D2 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				D8468DF81C6237F0000E10D2 /* MMArrayAddition.h */,
+				D8468DF91C6237F0000E10D2 /* MMArrayAddition.m */,
 				D8468DF51C617FFF000E10D2 /* MMSubarrayUtility.h */,
 				D8468DF61C617FFF000E10D2 /* MMSubarrayUtility.m */,
 			);
@@ -284,6 +291,7 @@
 				D88C73C91C5BB35C00E9217B /* MMNearbyWordsTests.m */,
 				D8468DE31C6172D6000E10D2 /* MMFactorialTests.m */,
 				D8468DEF1C6176D2000E10D2 /* MMSubarrayUtilityTests.m */,
+				D8468DFB1C623801000E10D2 /* MMArrayAdditionTests.m */,
 			);
 			name = "Category Tests";
 			sourceTree = "<group>";
@@ -361,6 +369,7 @@
 				D8D92F131C6032C400C7A86C /* MMGraph.m in Sources */,
 				D88C73BC1C5BB24300E9217B /* NSNumber+MMRandom.m in Sources */,
 				D8468DF71C617FFF000E10D2 /* MMSubarrayUtility.m in Sources */,
+				D8468DFC1C623801000E10D2 /* MMArrayAdditionTests.m in Sources */,
 				D84EB0A81C60E83400B86EC0 /* MMLinkedListTests.m in Sources */,
 				D88C73C21C5BB24A00E9217B /* NSArray+MMSorting.m in Sources */,
 				D88C73C81C5BB28300E9217B /* NSString+MMNearbyWords.m in Sources */,
@@ -385,6 +394,7 @@
 				D8D92F1B1C60352D00C7A86C /* MMGraphTests.m in Sources */,
 				D8D92F2A1C603F2E00C7A86C /* MMQueueTests.m in Sources */,
 				D88C73B61C5BB23C00E9217B /* NSArray+MMFunctional.m in Sources */,
+				D8468DFA1C6237F0000E10D2 /* MMArrayAddition.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

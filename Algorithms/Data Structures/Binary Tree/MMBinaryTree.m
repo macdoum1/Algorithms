@@ -92,4 +92,64 @@
     
     return isValid;
 }
+
+- (NSArray *)iterateToLevel:(NSInteger)toLevel {
+    return [self iterateToLevel:toLevel node:self.root currentLevel:0];
+}
+
+- (NSArray *)iterateToLevel:(NSInteger)toLevel node:(MMBinaryTreeNode *)node currentLevel:(NSInteger)currentLevel {
+    NSMutableArray *nodes = [NSMutableArray array];
+    if(toLevel == currentLevel) {
+        [nodes addObject:node.value];
+    } else {
+        [nodes addObjectsFromArray:[self iterateToLevel:toLevel
+                                                   node:node.leftChild
+                                           currentLevel:currentLevel+1]];
+        [nodes addObjectsFromArray:[self iterateToLevel:toLevel
+                                                   node:node.rightChild
+                                           currentLevel:currentLevel+1]];
+        
+    }
+    return nodes;
+}
+
+- (NSDictionary *)valuesByLevel {
+    return [self valuesByLevel:self.root currentLevel:0];
+}
+
+- (NSDictionary *)valuesByLevel:(MMBinaryTreeNode *)node currentLevel:(NSInteger)currentLevel {
+    if(!node) {
+        return @{};
+    }
+    
+    NSDictionary *levels = @{@(currentLevel): @[node.value]};
+    levels = [self mergeTwoDictionaries:levels dict2:[self valuesByLevel:node.leftChild currentLevel:currentLevel+1]];
+    levels = [self mergeTwoDictionaries:levels dict2:[self valuesByLevel:node.rightChild currentLevel:currentLevel+1]];
+    
+    return levels;
+}
+
+- (NSDictionary *)mergeTwoDictionaries:(NSDictionary <NSNumber *, NSArray *> *)dict1
+                                 dict2:(NSDictionary <NSNumber *, NSArray *> *)dict2 {
+    NSMutableSet *keysFromBoth = [NSMutableSet set];
+    [keysFromBoth addObjectsFromArray:dict1.allKeys];
+    [keysFromBoth addObjectsFromArray:dict2.allKeys];
+    
+    NSMutableDictionary *mergedDictionary = [NSMutableDictionary dictionary];
+    [keysFromBoth enumerateObjectsUsingBlock:^(NSNumber *key, BOOL *stop) {
+        NSMutableArray *values = [NSMutableArray array];
+        if(dict1[key]) {
+            [values addObjectsFromArray:dict1[key]];
+        }
+        
+        if(dict2[key]) {
+            [values addObjectsFromArray:dict2[key]];
+        }
+        
+        mergedDictionary[key] = values;
+    }];
+    
+    
+    return mergedDictionary;
+}
 @end

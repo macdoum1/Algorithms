@@ -80,4 +80,34 @@
     XCTAssert([tree isValidBinaryTree]);
 }
 
+- (void)testIterateToLevel {
+    MMBinaryTree *tree = [[MMBinaryTree alloc] init];
+    [tree insertValue:@10];
+    [tree insertValue:@7];
+    [tree insertValue:@12];
+    [tree insertValue:@6];
+    [tree insertValue:@8];
+    [tree insertValue:@11];
+    [tree insertValue:@13];
+
+    NSArray *valuesAtLevelTwo = [tree iterateToLevel:2];
+    valuesAtLevelTwo = valuesAtLevelTwo;
+    // TODO
+}
+
+- (void)testValuesByLevel {
+    MMBinaryTree *tree = [[MMBinaryTree alloc] init];
+    [tree insertValue:@10];
+    [tree insertValue:@7];
+    [tree insertValue:@12];
+    [tree insertValue:@6];
+    [tree insertValue:@8];
+    [tree insertValue:@11];
+    [tree insertValue:@13];
+    
+    NSDictionary *valuesByLevel = [tree valuesByLevel];
+    valuesByLevel = valuesByLevel;
+    // TODO
+}
+
 @end

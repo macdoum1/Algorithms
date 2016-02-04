@@ -51,4 +51,12 @@
     XCTAssert(longestIncreasingSubarrayLength == 5);
 }
 
+#pragma mark - Elements whose sum totals
+- (void)testThreeElementsWhoseSumTotals {
+    NSArray *array = @[@(-1), @3, @11, @(-10), @(5)];
+    NSSet *threeElements = [NSSet setWithArray:[MMSubarrayUtility findThreeElementsInArray:array whoseSumEquals:0]];
+    NSSet *targetArray = [NSSet setWithArray:@[@(-1), @11, @(-10)]];
+    XCTAssertEqualObjects(threeElements, targetArray);
+}
+
 @end

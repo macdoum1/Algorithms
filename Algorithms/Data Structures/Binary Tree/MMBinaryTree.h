@@ -14,4 +14,6 @@
 - (NSArray *)postOrderTraversal;
 - (NSArray *)inOrderTraversal;
 - (BOOL)isValidBinaryTree;
+- (NSArray *)iterateToLevel:(NSInteger)toLevel;
+- (NSDictionary *)valuesByLevel;
 @end

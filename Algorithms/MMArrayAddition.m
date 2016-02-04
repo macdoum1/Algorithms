@@ -36,12 +36,12 @@ static const NSInteger kMMArrayAdditionBase = 10;
     }
     
     NSInteger lastColVal = lastColSum % kMMArrayAdditionBase;
-    NSInteger carryRemaining = lastColSum - lastColVal;
-    NSInteger carryToAdd = carryRemaining/kMMArrayAdditionBase;
+    NSInteger carry = (lastColSum - lastColVal)/kMMArrayAdditionBase;
     
     NSInteger subarrayLength = array.count > 0 ? array.count-1 : 0;
     NSArray *subarray = [array subarrayWithRange:NSMakeRange(0, subarrayLength)];
-    NSMutableArray *arrayToReturn = [NSMutableArray arrayWithArray:[self addInteger:carryToAdd toArray:subarray]];
+    NSMutableArray *arrayToReturn = [NSMutableArray arrayWithArray:[self addInteger:carry
+                                                                            toArray:subarray]];
     [arrayToReturn addObject:@(lastColVal)];
     return arrayToReturn;
 }

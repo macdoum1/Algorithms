@@ -12,4 +12,6 @@
 + (NSArray <NSNumber *> *)subArrayOfArray:(NSArray <NSNumber *> *)array
                                   withSum:(NSNumber *)number;
 + (NSInteger)lengthOfLongestIncreasingSubarray:(NSArray *)array;
++ (NSArray <NSNumber *> *)findThreeElementsInArray:(NSArray <NSNumber *> *)array
+                                    whoseSumEquals:(NSInteger)sum;
 @end

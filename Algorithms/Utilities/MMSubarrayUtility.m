@@ -8,7 +8,10 @@
 
 #import "MMSubarrayUtility.h"
 
+#import "NSArray+MMSorting.h"
+
 @implementation MMSubarrayUtility
+#pragma mark - Subarray With Sum
 + (NSArray <NSNumber *> *)subArrayOfArray:(NSArray <NSNumber *> *)array
                                   withSum:(NSNumber *)number {
     for(NSInteger windowSize = 1; windowSize <= array.count; windowSize++) {
@@ -33,6 +36,7 @@
     return sum;
 }
 
+#pragma mark - Longest increasing subarray
 + (NSInteger)lengthOfLongestIncreasingSubarray:(NSArray *)array {
     NSInteger maxWindowSize = 0;
     for(NSInteger windowSize = 1; windowSize < array.count; windowSize++) {
@@ -60,5 +64,40 @@
         }
     }];
     return isIncreasing;
+}
+
+#pragma mark - Elements whose sum totals
++ (NSArray <NSNumber *> *)findThreeElementsInArray:(NSArray <NSNumber *> *)array
+                                    whoseSumEquals:(NSInteger)sum {
+    BOOL inefficient = NO;
+    if(inefficient) {
+        for(NSInteger i=0; i<array.count-2; i++) {
+            for(NSInteger j=i+1; j<array.count-1; j++) {
+                for(NSInteger k=j+1; k<array.count; k++) {
+                    if(array[i].integerValue + array[j].integerValue + array[k].integerValue == sum) {
+                        return @[array[i], array[j], array[k]];
+                    }
+                }
+            }
+        }
+    } else {
+        NSArray <NSNumber *> *sortedArray = [array sortedArrayWithType:MMSortTypeQuick];
+        for(NSInteger i=0; i<sortedArray.count-2; i++) {
+            NSInteger left = i+1;
+            NSInteger right = sortedArray.count-1;
+            
+            while (left < right) {
+                NSInteger sumOfCurrentElements = sortedArray[i].integerValue + sortedArray[left].integerValue + sortedArray[right].integerValue;
+                if(sumOfCurrentElements == sum) {
+                    return @[sortedArray[i], sortedArray[left], sortedArray[right]];
+                } else if(sumOfCurrentElements < sum) {
+                    left++;
+                } else {
+                    right--;
+                }
+            }
+        }
+    }
+    return nil;
 }
 @end

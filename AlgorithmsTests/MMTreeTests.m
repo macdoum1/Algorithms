@@ -91,8 +91,8 @@
     [tree insertValue:@13];
 
     NSArray *valuesAtLevelTwo = [tree iterateToLevel:2];
-    valuesAtLevelTwo = valuesAtLevelTwo;
-    // TODO
+    NSArray *targetArray = @[@6, @8, @11, @13];
+    XCTAssertEqualObjects(valuesAtLevelTwo, targetArray);
 }
 
 - (void)testValuesByLevel {
@@ -104,10 +104,11 @@
     [tree insertValue:@8];
     [tree insertValue:@11];
     [tree insertValue:@13];
+    [tree insertValue:@9];
     
-    NSDictionary *valuesByLevel = [tree valuesByLevel];
-    valuesByLevel = valuesByLevel;
-    // TODO
+    NSArray *valuesByLevel = [tree valuesByLevel];
+    NSArray *targetArray = @[@[@10], @[@7, @12], @[@6, @8, @11, @13], @[@9]];
+    XCTAssertEqualObjects(valuesByLevel, targetArray);
 }
 
 @end

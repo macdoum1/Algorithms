@@ -8,6 +8,7 @@
 
 #import "MMBinaryTree.h"
 #import "MMBinaryTreeNode.h"
+#import "NSArray+MMSorting.h"
 
 @interface MMBinaryTree ()
 @property (nonatomic, strong) MMBinaryTreeNode *root;
@@ -113,8 +114,14 @@
     return nodes;
 }
 
-- (NSDictionary *)valuesByLevel {
-    return [self valuesByLevel:self.root currentLevel:0];
+- (NSArray *)valuesByLevel {
+    NSDictionary *dict = [self valuesByLevel:self.root currentLevel:0];
+    NSArray *sortedKeys = [dict.allKeys sortedArrayWithType:MMSortTypeQuick];
+    NSMutableArray *valuesByLevel = [NSMutableArray array];
+    [sortedKeys enumerateObjectsUsingBlock:^(id key, NSUInteger idx, BOOL *stop) {
+        [valuesByLevel addObject:dict[key]];
+    }];
+    return valuesByLevel;
 }
 
 - (NSDictionary *)valuesByLevel:(MMBinaryTreeNode *)node currentLevel:(NSInteger)currentLevel {
@@ -125,7 +132,6 @@
     NSDictionary *levels = @{@(currentLevel): @[node.value]};
     levels = [self mergeTwoDictionaries:levels dict2:[self valuesByLevel:node.leftChild currentLevel:currentLevel+1]];
     levels = [self mergeTwoDictionaries:levels dict2:[self valuesByLevel:node.rightChild currentLevel:currentLevel+1]];
-    
     return levels;
 }
 

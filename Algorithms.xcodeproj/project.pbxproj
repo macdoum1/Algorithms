@@ -14,6 +14,12 @@
 		D8468DF71C617FFF000E10D2 /* MMSubarrayUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = D8468DF61C617FFF000E10D2 /* MMSubarrayUtility.m */; };
 		D8468DFA1C6237F0000E10D2 /* MMArrayAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = D8468DF91C6237F0000E10D2 /* MMArrayAddition.m */; };
 		D8468DFC1C623801000E10D2 /* MMArrayAdditionTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D8468DFB1C623801000E10D2 /* MMArrayAdditionTests.m */; };
+		D8468E1F1C63DEAE000E10D2 /* NSArray+MMMerge.m in Sources */ = {isa = PBXBuildFile; fileRef = D8468E1E1C63DEAD000E10D2 /* NSArray+MMMerge.m */; };
+		D8468E211C63DED9000E10D2 /* MMMergeArraysTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D8468E201C63DED9000E10D2 /* MMMergeArraysTests.m */; };
+		D8468E241C64126F000E10D2 /* NSString+MMCompression.m in Sources */ = {isa = PBXBuildFile; fileRef = D8468E231C64126F000E10D2 /* NSString+MMCompression.m */; };
+		D8468E261C64129C000E10D2 /* MMStringCompressionTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D8468E251C64129C000E10D2 /* MMStringCompressionTests.m */; };
+		D8468E291C644741000E10D2 /* MMMaximumStockProfit.m in Sources */ = {isa = PBXBuildFile; fileRef = D8468E281C644741000E10D2 /* MMMaximumStockProfit.m */; };
+		D8468E2B1C64478D000E10D2 /* MMMaximumStockProfitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D8468E2A1C64478D000E10D2 /* MMMaximumStockProfitTests.m */; };
 		D84EB0A81C60E83400B86EC0 /* MMLinkedListTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D84EB0A71C60E83400B86EC0 /* MMLinkedListTests.m */; };
 		D88C738B1C5AABED00E9217B /* MMSearchTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D88C738A1C5AABED00E9217B /* MMSearchTests.m */; };
 		D88C73AF1C5ACE4B00E9217B /* MMTreeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D88C73AE1C5ACE4B00E9217B /* MMTreeTests.m */; };
@@ -52,6 +58,15 @@
 		D8468DF81C6237F0000E10D2 /* MMArrayAddition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMArrayAddition.h; sourceTree = "<group>"; };
 		D8468DF91C6237F0000E10D2 /* MMArrayAddition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMArrayAddition.m; sourceTree = "<group>"; };
 		D8468DFB1C623801000E10D2 /* MMArrayAdditionTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMArrayAdditionTests.m; sourceTree = "<group>"; };
+		D8468E1D1C63DEAD000E10D2 /* NSArray+MMMerge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+MMMerge.h"; sourceTree = "<group>"; };
+		D8468E1E1C63DEAD000E10D2 /* NSArray+MMMerge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+MMMerge.m"; sourceTree = "<group>"; };
+		D8468E201C63DED9000E10D2 /* MMMergeArraysTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMMergeArraysTests.m; sourceTree = "<group>"; };
+		D8468E221C64126F000E10D2 /* NSString+MMCompression.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+MMCompression.h"; sourceTree = "<group>"; };
+		D8468E231C64126F000E10D2 /* NSString+MMCompression.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+MMCompression.m"; sourceTree = "<group>"; };
+		D8468E251C64129C000E10D2 /* MMStringCompressionTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMStringCompressionTests.m; sourceTree = "<group>"; };
+		D8468E271C644741000E10D2 /* MMMaximumStockProfit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMMaximumStockProfit.h; sourceTree = "<group>"; };
+		D8468E281C644741000E10D2 /* MMMaximumStockProfit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMMaximumStockProfit.m; sourceTree = "<group>"; };
+		D8468E2A1C64478D000E10D2 /* MMMaximumStockProfitTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMMaximumStockProfitTests.m; sourceTree = "<group>"; };
 		D84EB0A71C60E83400B86EC0 /* MMLinkedListTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMLinkedListTests.m; sourceTree = "<group>"; };
 		D88C738A1C5AABED00E9217B /* MMSearchTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMSearchTests.m; sourceTree = "<group>"; };
 		D88C73AE1C5ACE4B00E9217B /* MMTreeTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMTreeTests.m; sourceTree = "<group>"; };
@@ -120,6 +135,8 @@
 				D8468DF91C6237F0000E10D2 /* MMArrayAddition.m */,
 				D8468DF51C617FFF000E10D2 /* MMSubarrayUtility.h */,
 				D8468DF61C617FFF000E10D2 /* MMSubarrayUtility.m */,
+				D8468E271C644741000E10D2 /* MMMaximumStockProfit.h */,
+				D8468E281C644741000E10D2 /* MMMaximumStockProfit.m */,
 			);
 			name = Utilities;
 			sourceTree = "<group>";
@@ -172,6 +189,8 @@
 			children = (
 				D88C73C61C5BB28300E9217B /* NSString+MMNearbyWords.h */,
 				D88C73C71C5BB28300E9217B /* NSString+MMNearbyWords.m */,
+				D8468E221C64126F000E10D2 /* NSString+MMCompression.h */,
+				D8468E231C64126F000E10D2 /* NSString+MMCompression.m */,
 			);
 			name = "Misc String Algorithms";
 			sourceTree = "<group>";
@@ -179,6 +198,8 @@
 		D88C73B31C5BB22400E9217B /* Functional */ = {
 			isa = PBXGroup;
 			children = (
+				D8468E1D1C63DEAD000E10D2 /* NSArray+MMMerge.h */,
+				D8468E1E1C63DEAD000E10D2 /* NSArray+MMMerge.m */,
 				D88C73B41C5BB23C00E9217B /* NSArray+MMFunctional.h */,
 				D88C73B51C5BB23C00E9217B /* NSArray+MMFunctional.m */,
 			);
@@ -292,6 +313,9 @@
 				D8468DE31C6172D6000E10D2 /* MMFactorialTests.m */,
 				D8468DEF1C6176D2000E10D2 /* MMSubarrayUtilityTests.m */,
 				D8468DFB1C623801000E10D2 /* MMArrayAdditionTests.m */,
+				D8468E201C63DED9000E10D2 /* MMMergeArraysTests.m */,
+				D8468E251C64129C000E10D2 /* MMStringCompressionTests.m */,
+				D8468E2A1C64478D000E10D2 /* MMMaximumStockProfitTests.m */,
 			);
 			name = "Category Tests";
 			sourceTree = "<group>";
@@ -365,6 +389,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D8468DE41C6172D6000E10D2 /* MMFactorialTests.m in Sources */,
+				D8468E1F1C63DEAE000E10D2 /* NSArray+MMMerge.m in Sources */,
 				D8D92F301C60418B00C7A86C /* MMStackTests.m in Sources */,
 				D8D92F131C6032C400C7A86C /* MMGraph.m in Sources */,
 				D88C73BC1C5BB24300E9217B /* NSNumber+MMRandom.m in Sources */,
@@ -373,9 +398,11 @@
 				D84EB0A81C60E83400B86EC0 /* MMLinkedListTests.m in Sources */,
 				D88C73C21C5BB24A00E9217B /* NSArray+MMSorting.m in Sources */,
 				D88C73C81C5BB28300E9217B /* NSString+MMNearbyWords.m in Sources */,
+				D8468E2B1C64478D000E10D2 /* MMMaximumStockProfitTests.m in Sources */,
 				D8F6926F1C5A966D00B08CB5 /* MMRandomArrayTests.m in Sources */,
 				D8468DF01C6176D2000E10D2 /* MMSubarrayUtilityTests.m in Sources */,
 				D8F692711C5A970500B08CB5 /* MMRandomNumberTests.m in Sources */,
+				D8468E261C64129C000E10D2 /* MMStringCompressionTests.m in Sources */,
 				D8468DEA1C6173BA000E10D2 /* MMLinkedList.m in Sources */,
 				D8D92F0F1C6032AB00C7A86C /* MMBinaryTreeNode.m in Sources */,
 				D8D92F281C603F1D00C7A86C /* MMQueue.m in Sources */,
@@ -383,9 +410,11 @@
 				D8468DE71C6173A8000E10D2 /* NSNumber+MMFactorial.m in Sources */,
 				D8D92F241C603F0900C7A86C /* MMEdge.m in Sources */,
 				D88C73AF1C5ACE4B00E9217B /* MMTreeTests.m in Sources */,
+				D8468E241C64126F000E10D2 /* NSString+MMCompression.m in Sources */,
 				D88C73CA1C5BB35C00E9217B /* MMNearbyWordsTests.m in Sources */,
 				D88C73C11C5BB24A00E9217B /* NSArray+MMSearch.m in Sources */,
 				D8D92F0E1C6032AB00C7A86C /* MMBinaryTree.m in Sources */,
+				D8468E291C644741000E10D2 /* MMMaximumStockProfit.m in Sources */,
 				D8F692451C59689D00B08CB5 /* MMSortTests.m in Sources */,
 				D88C73BB1C5BB24300E9217B /* NSArray+MMRandom.m in Sources */,
 				D8D92F251C603F0900C7A86C /* MMVertex.m in Sources */,
@@ -393,6 +422,7 @@
 				D8F6926D1C5A951B00B08CB5 /* MMFunctionalTests.m in Sources */,
 				D8D92F1B1C60352D00C7A86C /* MMGraphTests.m in Sources */,
 				D8D92F2A1C603F2E00C7A86C /* MMQueueTests.m in Sources */,
+				D8468E211C63DED9000E10D2 /* MMMergeArraysTests.m in Sources */,
 				D88C73B61C5BB23C00E9217B /* NSArray+MMFunctional.m in Sources */,
 				D8468DFA1C6237F0000E10D2 /* MMArrayAddition.m in Sources */,
 			);

@@ -120,7 +120,6 @@
             [array exchangeObjectAtIndex:j withObjectAtIndex:j-1];
             j--;
         }
-        [array replaceObjectAtIndex:j withObject:target];
     }
     return array;
 }

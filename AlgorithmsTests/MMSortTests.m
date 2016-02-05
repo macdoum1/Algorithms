@@ -11,7 +11,7 @@
 #import "NSArray+MMSorting.h"
 #import "NSArray+MMRandom.h"
 
-static const NSInteger kNumOfElements = 5000;
+static const NSInteger kNumOfElements = 15;
 static const NSInteger kMinValue = 0;
 static const NSInteger kMaxValue = 10000;
 

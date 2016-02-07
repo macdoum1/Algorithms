@@ -14,5 +14,6 @@
 - (BOOL)findFirstValue:(id)value;
 - (BOOL)removeFirstValue:(id)value;
 - (NSArray *)allValues;
+- (void)reverseIterator:(void(^)(id value))iterator;
 @end
 

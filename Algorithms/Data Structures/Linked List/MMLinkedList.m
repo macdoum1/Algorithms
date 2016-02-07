@@ -16,6 +16,7 @@
 
 @interface MMLinkedList ()
 @property (nonatomic, strong) MMLinkedListNode *head;
+@property (nonatomic, strong) MMLinkedListNode *tail;
 @end
 
 @implementation MMLinkedList
@@ -24,19 +25,14 @@
 }
 
 - (void)addValue:(id)value {
+    MMLinkedListNode *newNode = [MMLinkedListNode nodeWithValue:value];
     if(!self.head) {
-        self.head = [MMLinkedListNode nodeWithValue:value];
-        return;
+        self.head = newNode;
+        self.tail = newNode;
+    } else {
+        self.tail.next = newNode;
+        self.tail = newNode;
     }
-    
-    MMLinkedListNode *lastNode = self.head;
-
-    while (lastNode.next) {
-        lastNode = lastNode.next;
-    }
-    
-    lastNode.next = [MMLinkedListNode nodeWithValue:value];
-    
 }
 
 - (BOOL)findFirstValue:(id)value {
@@ -85,6 +81,15 @@
     }
     
     return values;
+}
+
+- (void)reverseIterator:(void(^)(id value))iterator {
+    NSArray *allValues = [self allValues];
+    for(id value in [allValues reverseObjectEnumerator]) {
+        if(iterator) {
+            iterator(value);
+        }
+    }
 }
 @end
 

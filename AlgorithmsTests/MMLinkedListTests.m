@@ -97,4 +97,18 @@
     XCTAssertEqualObjects(values, targetValues);
 }
 
+- (void)testReverseObjectEnumerator {
+    MMLinkedList *list = [MMLinkedList list];
+    [list addValue:@"A"];
+    [list addValue:@"B"];
+    [list addValue:@"C"];
+    NSMutableArray *reversedList = [NSMutableArray array];
+    [list reverseIterator:^(id value) {
+        [reversedList addObject:value];
+    }];
+    
+    NSArray *targetArray = @[@"C", @"B", @"A"];
+    XCTAssertEqualObjects(reversedList, targetArray);
+}
+
 @end

@@ -1,6 +1,6 @@
 //
 //  NSArray+MMRandom.h
-//  Algorithms
+//  MMAlgorithms
 //
 //  Created by Mike MacDougall on 1/28/16.
 //  Copyright © 2016 Michael MacDougall. All rights reserved.

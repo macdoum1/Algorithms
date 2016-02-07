@@ -100,7 +100,7 @@
 		D8D92F2C1C60409800C7A86C /* MMStack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MMStack.h; path = "Data Structures/Stack/MMStack.h"; sourceTree = "<group>"; };
 		D8D92F2D1C60409800C7A86C /* MMStack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MMStack.m; path = "Data Structures/Stack/MMStack.m"; sourceTree = "<group>"; };
 		D8D92F2F1C60418B00C7A86C /* MMStackTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMStackTests.m; sourceTree = "<group>"; };
-		D8F692401C59689D00B08CB5 /* AlgorithmsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AlgorithmsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D8F692401C59689D00B08CB5 /* MMAlgorithmsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MMAlgorithmsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8F692441C59689D00B08CB5 /* MMSortTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MMSortTests.m; sourceTree = "<group>"; };
 		D8F692461C59689D00B08CB5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D8F6926C1C5A951B00B08CB5 /* MMFunctionalTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMFunctionalTests.m; sourceTree = "<group>"; };
@@ -251,8 +251,8 @@
 		D8F6921E1C59689D00B08CB5 = {
 			isa = PBXGroup;
 			children = (
-				D8F692291C59689D00B08CB5 /* Algorithms */,
-				D8F692431C59689D00B08CB5 /* AlgorithmsTests */,
+				D8F692291C59689D00B08CB5 /* MMAlgorithms */,
+				D8F692431C59689D00B08CB5 /* MMAlgorithmsTests */,
 				D8F692281C59689D00B08CB5 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -260,27 +260,29 @@
 		D8F692281C59689D00B08CB5 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				D8F692401C59689D00B08CB5 /* AlgorithmsTests.xctest */,
+				D8F692401C59689D00B08CB5 /* MMAlgorithmsTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		D8F692291C59689D00B08CB5 /* Algorithms */ = {
+		D8F692291C59689D00B08CB5 /* MMAlgorithms */ = {
 			isa = PBXGroup;
 			children = (
 				D8468DF11C617FCF000E10D2 /* Utilities */,
 				D88C738C1C5AB8B400E9217B /* Data Structures */,
 				D8F692721C5A9A8200B08CB5 /* Categories */,
 			);
+			name = MMAlgorithms;
 			path = Algorithms;
 			sourceTree = "<group>";
 		};
-		D8F692431C59689D00B08CB5 /* AlgorithmsTests */ = {
+		D8F692431C59689D00B08CB5 /* MMAlgorithmsTests */ = {
 			isa = PBXGroup;
 			children = (
 				D8F692731C5A9A8E00B08CB5 /* Category Tests */,
 				D8F692461C59689D00B08CB5 /* Info.plist */,
 			);
+			name = MMAlgorithmsTests;
 			path = AlgorithmsTests;
 			sourceTree = "<group>";
 		};
@@ -323,9 +325,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		D8F6923F1C59689D00B08CB5 /* AlgorithmsTests */ = {
+		D8F6923F1C59689D00B08CB5 /* MMAlgorithmsTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D8F692571C59689D00B08CB5 /* Build configuration list for PBXNativeTarget "AlgorithmsTests" */;
+			buildConfigurationList = D8F692571C59689D00B08CB5 /* Build configuration list for PBXNativeTarget "MMAlgorithmsTests" */;
 			buildPhases = (
 				D8F6923C1C59689D00B08CB5 /* Sources */,
 				D8F6923D1C59689D00B08CB5 /* Frameworks */,
@@ -335,9 +337,9 @@
 			);
 			dependencies = (
 			);
-			name = AlgorithmsTests;
+			name = MMAlgorithmsTests;
 			productName = AlgorithmsTests;
-			productReference = D8F692401C59689D00B08CB5 /* AlgorithmsTests.xctest */;
+			productReference = D8F692401C59689D00B08CB5 /* MMAlgorithmsTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -355,7 +357,7 @@
 					};
 				};
 			};
-			buildConfigurationList = D8F692221C59689D00B08CB5 /* Build configuration list for PBXProject "Algorithms" */;
+			buildConfigurationList = D8F692221C59689D00B08CB5 /* Build configuration list for PBXProject "MMAlgorithms" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -368,7 +370,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				D8F6923F1C59689D00B08CB5 /* AlgorithmsTests */,
+				D8F6923F1C59689D00B08CB5 /* MMAlgorithmsTests */,
 			);
 		};
 /* End PBXProject section */
@@ -520,7 +522,7 @@
 				INFOPLIST_FILE = AlgorithmsTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.mmacdougall.AlgorithmsTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = MMAlgorithmsTests;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Algorithms.app/Algorithms";
 			};
 			name = Debug;
@@ -532,7 +534,7 @@
 				INFOPLIST_FILE = AlgorithmsTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.mmacdougall.AlgorithmsTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = MMAlgorithmsTests;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Algorithms.app/Algorithms";
 			};
 			name = Release;
@@ -540,7 +542,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		D8F692221C59689D00B08CB5 /* Build configuration list for PBXProject "Algorithms" */ = {
+		D8F692221C59689D00B08CB5 /* Build configuration list for PBXProject "MMAlgorithms" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D8F692521C59689D00B08CB5 /* Debug */,
@@ -549,7 +551,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		D8F692571C59689D00B08CB5 /* Build configuration list for PBXNativeTarget "AlgorithmsTests" */ = {
+		D8F692571C59689D00B08CB5 /* Build configuration list for PBXNativeTarget "MMAlgorithmsTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D8F692581C59689D00B08CB5 /* Debug */,

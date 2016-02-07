@@ -1,6 +1,6 @@
 //
 //  MMStackTests.m
-//  Algorithms
+//  MMAlgorithms
 //
 //  Created by Mike MacDougall on 2/1/16.
 //  Copyright © 2016 Michael MacDougall. All rights reserved.

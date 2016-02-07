@@ -1,6 +1,6 @@
 //
 //  NSArray+MMSorting.h
-//  Algorithms
+//  MMAlgorithms
 //
 //  Created by Mike MacDougall on 1/27/16.
 //  Copyright © 2016 Michael MacDougall. All rights reserved.

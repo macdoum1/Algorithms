@@ -9,8 +9,6 @@
 #import "NSString+MMCompression.h"
 
 @implementation NSString (MMCompression)
-// aaabbccddd d = a3b2c2d4
-// 0123567891011
 - (NSString *)compressedString {
     NSMutableString *string = [self mutableCopy];
     NSInteger i = 0;

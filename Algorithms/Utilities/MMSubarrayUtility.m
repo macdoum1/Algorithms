@@ -146,4 +146,23 @@
     
     return [array subarrayWithRange:NSMakeRange(startIndex, size)];
 }
+
++ (NSArray <NSNumber *> *)tripletsFromArray:(NSArray <NSNumber *> *)array whoseSumIsLessThan:(NSInteger)lessThan {
+    NSArray <NSNumber *> *sorted = [array sortedArrayWithType:MMSortTypeQuick];
+    NSMutableArray *triplets = [NSMutableArray array];
+    for(NSInteger i=0; i<sorted.count-2; i++) {
+        NSInteger left = i+1;
+        NSInteger right = sorted.count-1;
+        while(left<right) {
+            NSInteger sum = sorted[i].integerValue + sorted[left].integerValue + sorted[right].integerValue;
+            if(sum < lessThan) {
+                [triplets addObject:@[sorted[i], sorted[left], sorted[right]]];
+                left++;
+            } else {
+                right--;
+            }
+        }
+    }
+    return triplets;
+}
 @end

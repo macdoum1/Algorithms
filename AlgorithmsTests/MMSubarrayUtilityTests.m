@@ -67,4 +67,12 @@
     XCTAssertEqualObjects(subarray, targetArray);
 }
 
+#pragma mark - Triplets from array with sum less than
+- (void)testTriplesFromArrayWithSumLessThan {
+    NSArray *array = @[@1, @2, @1, @3, @10, @3];
+    NSArray *triplets = [MMSubarrayUtility tripletsFromArray:array whoseSumIsLessThan:7];
+    NSArray *targetTriplets = @[@[@1, @1, @3], @[@1, @2, @3], @[@1, @2, @3]];
+    XCTAssertEqualObjects(triplets, targetTriplets);
+}
+
 @end

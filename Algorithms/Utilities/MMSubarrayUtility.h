@@ -14,4 +14,5 @@
 + (NSInteger)lengthOfLongestIncreasingSubarray:(NSArray *)array;
 + (NSArray <NSNumber *> *)findThreeElementsInArray:(NSArray <NSNumber *> *)array
                                     whoseSumEquals:(NSInteger)sum;
++ (NSArray <NSNumber *> *)subarrayIndiciesWithLeastAverage:(NSArray <NSNumber *> *)array size:(NSInteger)size;
 @end

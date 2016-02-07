@@ -14,7 +14,6 @@
 @property (nonatomic, strong) MMVertex *adjacentFrom;
 @property (nonatomic, strong) MMVertex *adjacentTo;
 @property (nonatomic, strong) NSNumber *weight;
-@property (nonatomic, assign) BOOL used;
 
 + (instancetype)edgeAdjacentFrom:(MMVertex *)adjacentFrom
                       adjacentTo:(MMVertex *)adjacentTo

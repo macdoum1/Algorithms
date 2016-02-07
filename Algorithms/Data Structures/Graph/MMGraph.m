@@ -69,55 +69,32 @@
 #pragma mark - Prim AST
 - (NSArray *)primASTWithStart:(MMVertex *)start {
     NSMutableArray <MMEdge *> *edges = [NSMutableArray array];
-    [self clearHistory];
     
-    start.wasVisited = YES;
-    
-    while([self visitedVertices].count != self.vertices.count) {
-        MMEdge *minimumEdge = [self minimumEdgeInVertices:[self visitedVertices]];
+    NSMutableArray *visitedVertices = [NSMutableArray array];
+    [visitedVertices addObject:start];
+    while(visitedVertices.count != self.vertices.count) {
+        MMEdge *minimumEdge = [self minimumEdgeInVisitedVerticies:visitedVertices];
         if(minimumEdge) {
             [edges addObject:minimumEdge];
         }
-        minimumEdge.adjacentTo.wasVisited = YES;
-    }
-    for(MMEdge *edge in edges) {
-        NSLog(@"From: %@ To: %@", edge.adjacentFrom.value, edge.adjacentTo.value);
+        [visitedVertices addObject:minimumEdge.adjacentTo];
     }
     return edges;
 }
 
-- (NSArray <MMVertex *> *)visitedVertices {
-    NSMutableArray *visitedVertices = [NSMutableArray array];
-    for(MMVertex *vertex in self.vertices) {
-        if(vertex.wasVisited) {
-            [visitedVertices addObject:vertex];
-        }
-    }
-    return visitedVertices;
-}
-
-- (MMEdge *)minimumEdgeInVertices:(NSArray <MMVertex *> *)vertices {
+- (MMEdge *)minimumEdgeInVisitedVerticies:(NSArray <MMVertex *> *)vertices {
     MMEdge *minimumEdge = nil;
     for(MMVertex *vertex in vertices) {
         for(MMEdge *edge in vertex.adjacentEdges) {
-            if(!minimumEdge && !edge.adjacentTo.wasVisited) {
+            BOOL wasAdjacentToVisited = [vertices indexOfObject:edge.adjacentTo] != NSNotFound;
+            if(!minimumEdge && !wasAdjacentToVisited) {
                 minimumEdge = edge;
-            } else if(edge && minimumEdge && [edge.weight compare:minimumEdge.weight] == NSOrderedAscending && !edge.adjacentTo.wasVisited) {
+            } else if(edge && minimumEdge && [edge.weight compare:minimumEdge.weight] == NSOrderedAscending && !wasAdjacentToVisited) {
                 minimumEdge = edge;
             }
         }
     }
     return minimumEdge;
-}
-
-#pragma mark - Clearing History associate with graph algorithms
-- (void)clearHistory {
-    for (MMVertex *vertex in self.vertices) {
-        for (MMEdge *edge in vertex.adjacentEdges) {
-            edge.used = NO;
-        }
-        vertex.wasVisited = NO;
-    }
 }
 
 @end

@@ -59,4 +59,12 @@
     XCTAssertEqualObjects(threeElements, targetArray);
 }
 
+#pragma mark - Subarray with least average
+- (void)testSubarrayWithLeastAverage {
+    NSArray *array = @[@1, @10, @11, @50, @2, @3, @14];
+    NSArray *subarray = [MMSubarrayUtility subarrayIndiciesWithLeastAverage:array size:3];
+    NSArray *targetArray = @[@2, @3, @14];
+    XCTAssertEqualObjects(subarray, targetArray);
+}
+
 @end

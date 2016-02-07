@@ -13,7 +13,6 @@
 @interface MMVertex : NSObject
 @property (nonatomic, strong) id value;
 @property (nonatomic, strong) NSMutableSet <MMEdge *> *adjacentEdges;
-@property (nonatomic, assign) BOOL wasVisited;
 
 + (instancetype)vertexWithValue:(id)value;
 @end

@@ -38,18 +38,40 @@
 
 #pragma mark - Longest increasing subarray
 + (NSInteger)lengthOfLongestIncreasingSubarray:(NSArray *)array {
-    NSInteger maxWindowSize = 0;
-    for(NSInteger windowSize = 1; windowSize < array.count; windowSize++) {
-        NSInteger numOfWindows = array.count - windowSize + 1;
-        for(NSInteger currentWindow = 0; currentWindow < numOfWindows; currentWindow++) {
-            NSRange subarrayRange = NSMakeRange(currentWindow, windowSize);
-            NSArray *subarray = [array subarrayWithRange:subarrayRange];
-            if([self arrayIncreasing:subarray]) {
-                maxWindowSize = windowSize;
+    BOOL inefficient = NO;
+    if(inefficient) {
+        NSInteger maxWindowSize = 0;
+        for(NSInteger windowSize = 1; windowSize < array.count; windowSize++) {
+            NSInteger numOfWindows = array.count - windowSize + 1;
+            for(NSInteger currentWindow = 0; currentWindow < numOfWindows; currentWindow++) {
+                NSRange subarrayRange = NSMakeRange(currentWindow, windowSize);
+                NSArray *subarray = [array subarrayWithRange:subarrayRange];
+                if([self arrayIncreasing:subarray]) {
+                    maxWindowSize = windowSize;
+                }
             }
         }
+        return maxWindowSize;
+    } else {
+        NSInteger lengthOfLongestIncreasingSubarray = NSIntegerMin;
+        NSInteger previousValue = [array.firstObject integerValue];
+        NSInteger lengthOfCurrentIncreasingSubarray = 1;
+        for(NSInteger i=1; i<array.count; i++) {
+            if([array[i] integerValue] > previousValue) {
+                lengthOfCurrentIncreasingSubarray++;
+            } else {
+                lengthOfCurrentIncreasingSubarray = 1;
+            }
+            previousValue = [array[i] integerValue];
+            
+            if(lengthOfCurrentIncreasingSubarray > lengthOfLongestIncreasingSubarray) {
+                lengthOfLongestIncreasingSubarray = lengthOfCurrentIncreasingSubarray;
+            }
+            
+        }
+        
+        return lengthOfLongestIncreasingSubarray;
     }
-    return maxWindowSize;
 }
 
 + (BOOL)arrayIncreasing:(NSArray *)array {
@@ -99,5 +121,29 @@
         }
     }
     return nil;
+}
+
++ (NSArray <NSNumber *> *)subarrayIndiciesWithLeastAverage:(NSArray <NSNumber *> *)array size:(NSInteger)size {
+    if(array.count < size) {
+        return nil;
+    }
+    
+    NSInteger startIndex = 0;
+    
+    NSInteger leastSum = 0;
+    for(NSInteger i=0; i<size; i++) {
+        leastSum += array[i].integerValue;
+    }
+    
+    NSInteger currentSum = leastSum;
+    for(NSInteger i=size; i<array.count; i++) {
+        currentSum += array[i].integerValue - array[i-1].integerValue;
+        if(currentSum < leastSum) {
+            leastSum = currentSum;
+            startIndex = i;
+        }
+    }
+    
+    return [array subarrayWithRange:NSMakeRange(startIndex, size)];
 }
 @end

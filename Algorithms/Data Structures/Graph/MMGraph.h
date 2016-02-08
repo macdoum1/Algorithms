@@ -19,4 +19,6 @@
 
 - (BOOL)isDirectedGraph;
 - (NSArray *)primASTWithStart:(MMVertex *)start;
+- (NSArray *)depthFirstTraversal:(MMVertex *)start;
+- (NSArray *)breadthFirstTraversal:(MMVertex *)start;
 @end

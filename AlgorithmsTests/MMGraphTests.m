@@ -68,9 +68,8 @@
     MMVertex *A = [MMVertex vertexWithValue:@1];
     MMVertex *B = [MMVertex vertexWithValue:@2];
     [graph addEdgeFromVertex:A toVertex:B weight:@1];
-    [graph addEdgeFromVertex:B toVertex:A weight:@1];
     
-    XCTAssert(![graph isDirectedGraph]);
+    XCTAssert([graph isDirectedGraph]);
 }
 
 - (void)testPrimAST {
@@ -116,6 +115,52 @@
     NSArray <MMEdge *> *edges = [graph primASTWithStart:one];
     NSArray *targetArray = @[oneToThree, threeToSix, sixToFour, threeToTwo, twoToFive];
     XCTAssertEqualObjects(edges, targetArray);
+}
+
+- (void)testDepthFirstTraversal {
+    MMGraph *graph = [MMGraph graph];
+    
+    MMVertex *a = [MMVertex vertexWithValue:@"A"];
+    MMVertex *b = [MMVertex vertexWithValue:@"B"];
+    MMVertex *c = [MMVertex vertexWithValue:@"C"];
+    MMVertex *d = [MMVertex vertexWithValue:@"D"];
+    MMVertex *e = [MMVertex vertexWithValue:@"E"];
+    MMVertex *f = [MMVertex vertexWithValue:@"F"];
+    MMVertex *g = [MMVertex vertexWithValue:@"G"];
+    
+    [graph addEdgeFromVertex:a toVertex:b weight:nil];
+    [graph addEdgeFromVertex:a toVertex:d weight:nil];
+    [graph addEdgeFromVertex:b toVertex:c weight:nil];
+    [graph addEdgeFromVertex:c toVertex:e weight:nil];
+    [graph addEdgeFromVertex:d toVertex:f weight:nil];
+    [graph addEdgeFromVertex:f toVertex:g weight:nil];
+    
+    NSArray *dft = [graph depthFirstTraversal:a];
+    NSArray *target = @[@"A", @"D", @"F", @"G", @"B", @"C", @"E"];
+    XCTAssertEqualObjects(dft, target);
+}
+
+- (void)testBreadthFirstTraversal {
+    MMGraph *graph = [MMGraph graph];
+    
+    MMVertex *a = [MMVertex vertexWithValue:@"A"];
+    MMVertex *b = [MMVertex vertexWithValue:@"B"];
+    MMVertex *c = [MMVertex vertexWithValue:@"C"];
+    MMVertex *d = [MMVertex vertexWithValue:@"D"];
+    MMVertex *e = [MMVertex vertexWithValue:@"E"];
+    MMVertex *f = [MMVertex vertexWithValue:@"F"];
+    MMVertex *g = [MMVertex vertexWithValue:@"G"];
+    
+    [graph addEdgeFromVertex:a toVertex:b weight:nil];
+    [graph addEdgeFromVertex:a toVertex:d weight:nil];
+    [graph addEdgeFromVertex:b toVertex:c weight:nil];
+    [graph addEdgeFromVertex:c toVertex:e weight:nil];
+    [graph addEdgeFromVertex:d toVertex:f weight:nil];
+    [graph addEdgeFromVertex:f toVertex:g weight:nil];
+    
+    NSArray *dft = [graph breadthFirstTraversal:a];
+    NSArray *target = @[@"A", @"B", @"D", @"C", @"F", @"E", @"G"];
+    XCTAssertEqualObjects(dft, target);
 }
 
 @end

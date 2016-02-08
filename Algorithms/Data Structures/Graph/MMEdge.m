@@ -18,4 +18,8 @@
     edge.weight = weight;
     return edge;
 }
+
+- (NSString *)description {
+    return [NSString stringWithFormat:@"From: %@ To: %@", self.adjacentFrom, self.adjacentTo];
+}
 @end

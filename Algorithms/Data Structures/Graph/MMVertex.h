@@ -12,7 +12,7 @@
 
 @interface MMVertex : NSObject
 @property (nonatomic, strong) id value;
-@property (nonatomic, strong) NSMutableSet <MMEdge *> *adjacentEdges;
+@property (nonatomic, strong) NSMutableArray <MMEdge *> *adjacentEdges;
 
 + (instancetype)vertexWithValue:(id)value;
 @end

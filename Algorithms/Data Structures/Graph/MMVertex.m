@@ -12,7 +12,7 @@
 - (instancetype)init {
     self = [super init];
     if(self) {
-        self.adjacentEdges = [NSMutableSet set];
+        self.adjacentEdges = [NSMutableArray array];
     }
     return self;
 }
@@ -21,5 +21,9 @@
     MMVertex *vertex = [[MMVertex alloc] init];
     vertex.value = value;
     return vertex;
+}
+
+- (NSString *)description {
+    return [self.value description];
 }
 @end

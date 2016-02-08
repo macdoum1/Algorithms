@@ -9,6 +9,8 @@
 #import "MMGraph.h"
 
 #import "MMQueue.h"
+#import "MMStack.h"
+#import "NSArray+MMFunctional.h"
 
 @interface MMGraph ()
 @property (nonatomic, copy) NSSet *vertices;
@@ -34,7 +36,6 @@
     MMEdge *edge = [MMEdge edgeAdjacentFrom:fromVertex adjacentTo:toVertex weight:weight];
     
     [fromVertex.adjacentEdges addObject:edge];
-    [toVertex.adjacentEdges addObject:edge];
     
     NSMutableSet *mutSet = [NSMutableSet setWithSet:self.vertices];
     [mutSet addObject:fromVertex];
@@ -96,5 +97,55 @@
     }
     return minimumEdge;
 }
+
+#pragma mark - Depth First Traversal
+- (NSArray *)depthFirstTraversal:(MMVertex *)start {
+    
+    NSMutableArray *visitedVertices = [NSMutableArray array];
+    
+    MMStack *stack = [MMStack stack];
+    [stack push:start];
+    
+    while (stack.size > 0) {
+        MMVertex *vertex = [stack pop];
+        [visitedVertices addObject:vertex];
+        for(MMEdge *edge in vertex.adjacentEdges) {
+            MMVertex *potentialVertex = edge.adjacentTo;
+            if([visitedVertices indexOfObject:potentialVertex] == NSNotFound) {
+                [stack push:potentialVertex];
+            }
+        }
+    }
+    
+    return [visitedVertices map:^id(MMVertex *vertex) {
+        return vertex.value;
+    }];
+    
+}
+
+#pragma mark - Breadth First Traversal
+- (NSArray *)breadthFirstTraversal:(MMVertex *)start {
+    NSMutableArray *visitedVertices = [NSMutableArray array];
+    
+    MMQueue *queue = [MMQueue queue];
+    [queue push:start];
+    
+    while (queue.size > 0) {
+        MMVertex *vertex = [queue pop];
+        [visitedVertices addObject:vertex];
+        for(MMEdge *edge in vertex.adjacentEdges) {
+            MMVertex *potentialVertex = edge.adjacentTo;
+            if([visitedVertices indexOfObject:potentialVertex] == NSNotFound) {
+                [queue push:potentialVertex];
+            }
+        }
+    }
+    
+    return [visitedVertices map:^NSString *(MMVertex *vertex) {
+        return vertex.value;
+    }];
+}
+
+
 
 @end

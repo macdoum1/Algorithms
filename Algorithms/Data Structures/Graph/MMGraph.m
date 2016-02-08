@@ -110,9 +110,9 @@
         MMVertex *vertex = [stack pop];
         [visitedVertices addObject:vertex];
         for(MMEdge *edge in vertex.adjacentEdges) {
-            MMVertex *potentialVertex = edge.adjacentTo;
-            if([visitedVertices indexOfObject:potentialVertex] == NSNotFound) {
-                [stack push:potentialVertex];
+            MMVertex *nextVertex = edge.adjacentTo;
+            if(nextVertex && [visitedVertices indexOfObject:nextVertex] == NSNotFound) {
+                [stack push:nextVertex];
             }
         }
     }
@@ -134,9 +134,9 @@
         MMVertex *vertex = [queue pop];
         [visitedVertices addObject:vertex];
         for(MMEdge *edge in vertex.adjacentEdges) {
-            MMVertex *potentialVertex = edge.adjacentTo;
-            if([visitedVertices indexOfObject:potentialVertex] == NSNotFound) {
-                [queue push:potentialVertex];
+            MMVertex *nextVertex = edge.adjacentTo;
+            if(nextVertex && [visitedVertices indexOfObject:nextVertex] == NSNotFound) {
+                [queue push:nextVertex];
             }
         }
     }

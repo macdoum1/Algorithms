@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		27A045C71C682A3000AEE54D /* MMDivisionUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 27A045C61C682A3000AEE54D /* MMDivisionUtility.m */; };
+		27A045C91C682B0600AEE54D /* MMDivisionUtilityTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 27A045C81C682B0600AEE54D /* MMDivisionUtilityTests.m */; };
 		D8468DE41C6172D6000E10D2 /* MMFactorialTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D8468DE31C6172D6000E10D2 /* MMFactorialTests.m */; };
 		D8468DE71C6173A8000E10D2 /* NSNumber+MMFactorial.m in Sources */ = {isa = PBXBuildFile; fileRef = D8468DE61C6173A8000E10D2 /* NSNumber+MMFactorial.m */; };
 		D8468DEA1C6173BA000E10D2 /* MMLinkedList.m in Sources */ = {isa = PBXBuildFile; fileRef = D8468DE91C6173BA000E10D2 /* MMLinkedList.m */; };
@@ -47,6 +49,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		27A045C51C682A3000AEE54D /* MMDivisionUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MMDivisionUtility.h; path = Utilities/MMDivisionUtility.h; sourceTree = "<group>"; };
+		27A045C61C682A3000AEE54D /* MMDivisionUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MMDivisionUtility.m; path = Utilities/MMDivisionUtility.m; sourceTree = "<group>"; };
+		27A045C81C682B0600AEE54D /* MMDivisionUtilityTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMDivisionUtilityTests.m; sourceTree = "<group>"; };
 		D8468DE31C6172D6000E10D2 /* MMFactorialTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMFactorialTests.m; sourceTree = "<group>"; };
 		D8468DE51C6173A8000E10D2 /* NSNumber+MMFactorial.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSNumber+MMFactorial.h"; path = "Categories/Misc Number Algorithms/NSNumber+MMFactorial.h"; sourceTree = "<group>"; };
 		D8468DE61C6173A8000E10D2 /* NSNumber+MMFactorial.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSNumber+MMFactorial.m"; path = "Categories/Misc Number Algorithms/NSNumber+MMFactorial.m"; sourceTree = "<group>"; };
@@ -137,6 +142,8 @@
 				D8468E431C67ED6A000E10D2 /* MMMaximumStockProfit.m */,
 				D8468DF51C617FFF000E10D2 /* MMSubarrayUtility.h */,
 				D8468DF61C617FFF000E10D2 /* MMSubarrayUtility.m */,
+				27A045C51C682A3000AEE54D /* MMDivisionUtility.h */,
+				27A045C61C682A3000AEE54D /* MMDivisionUtility.m */,
 			);
 			name = Utilities;
 			sourceTree = "<group>";
@@ -318,6 +325,7 @@
 				D8468E201C63DED9000E10D2 /* MMMergeArraysTests.m */,
 				D8468E251C64129C000E10D2 /* MMStringCompressionTests.m */,
 				D8468E2A1C64478D000E10D2 /* MMMaximumStockProfitTests.m */,
+				27A045C81C682B0600AEE54D /* MMDivisionUtilityTests.m */,
 			);
 			name = "Category Tests";
 			sourceTree = "<group>";
@@ -411,6 +419,8 @@
 				D8468DE71C6173A8000E10D2 /* NSNumber+MMFactorial.m in Sources */,
 				D8D92F241C603F0900C7A86C /* MMEdge.m in Sources */,
 				D8468E3F1C67ED5C000E10D2 /* NSArray+MMMerge.m in Sources */,
+				27A045C91C682B0600AEE54D /* MMDivisionUtilityTests.m in Sources */,
+				27A045C71C682A3000AEE54D /* MMDivisionUtility.m in Sources */,
 				D88C73AF1C5ACE4B00E9217B /* MMTreeTests.m in Sources */,
 				D88C73CA1C5BB35C00E9217B /* MMNearbyWordsTests.m in Sources */,
 				D88C73C11C5BB24A00E9217B /* NSArray+MMSearch.m in Sources */,

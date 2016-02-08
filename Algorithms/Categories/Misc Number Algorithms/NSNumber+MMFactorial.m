@@ -29,4 +29,12 @@
     
     return [self recursiveNFactorial:n-1] * n;
 }
+
++ (NSNumber *)nFactorialIterative:(NSInteger)n {
+    NSInteger factorial = 1;
+    for(NSInteger i=1; i<=n; i++) {
+        factorial = factorial * i;
+    }
+    return @(factorial);
+}
 @end

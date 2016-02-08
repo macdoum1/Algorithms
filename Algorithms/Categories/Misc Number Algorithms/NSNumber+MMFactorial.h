@@ -10,4 +10,5 @@
 
 @interface NSNumber (MMFactorial)
 + (NSNumber *)nFactorial:(NSInteger)n;
++ (NSNumber *)nFactorialIterative:(NSInteger)n;
 @end

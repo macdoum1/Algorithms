@@ -33,7 +33,7 @@
 - (id)pop {
     id value = self.stack.lastObject;
     if(value) {
-        [self.stack removeObjectAtIndex:self.size-1];
+        [self.stack removeLastObject];
     }
     return value;
 }

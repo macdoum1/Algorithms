@@ -34,4 +34,8 @@
     }];
     return array;
 }
+
+- (NSArray *)arrayByRemovingDuplicates {
+    return [[[NSOrderedSet alloc] initWithArray:self] array];
+}
 @end

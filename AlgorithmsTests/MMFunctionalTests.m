@@ -59,4 +59,12 @@
     XCTAssert(emptyArray.count == 0);
 }
 
+#pragma mark - Removing Duplicates
+- (void)testRemoveDuplicates {
+    NSArray *array = @[@1, @1, @2, @3, @4, @5, @5, @4, @6, @8];
+    NSArray *dupesRemoved = [array arrayByRemovingDuplicates];
+    NSArray *targetArray = @[@1, @2, @3, @4, @5, @6, @8];
+    XCTAssertEqualObjects(dupesRemoved, targetArray);
+}
+
 @end

@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
+typedef id(^MMBinaryTreeMapAction)(id obj);
+
 @interface MMBinaryTree : NSObject
 - (void)insertValue:(id)value;
 - (NSArray *)preOrderTraversal;
@@ -16,4 +18,8 @@
 - (BOOL)isValidBinaryTree;
 - (NSArray *)iterateToLevel:(NSInteger)toLevel;
 - (NSArray *)valuesByLevel;
+- (BOOL)isBinaryTreeComplete;
+- (NSArray <NSArray *> *)levelOrder;
+- (NSArray <NSNumber *> *)integerAverageOfEachLevel;
+- (void)treeMap:(MMBinaryTreeMapAction)mapAction;
 @end

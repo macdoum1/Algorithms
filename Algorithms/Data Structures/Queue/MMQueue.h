@@ -13,5 +13,6 @@
 - (void)push:(id)obj;
 - (id)pop;
 - (id)peek;
+- (NSArray *)arrayRepresentation;
 @property (nonatomic, assign, readonly) NSInteger size;
 @end

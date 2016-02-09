@@ -111,4 +111,97 @@
     XCTAssertEqualObjects(valuesByLevel, targetArray);
 }
 
+#pragma mark - Complete Binary Tree
+- (void)testTreeComplete {
+    MMBinaryTree *tree = [[MMBinaryTree alloc] init];
+    [tree insertValue:@5];
+    [tree insertValue:@3];
+    [tree insertValue:@7];
+    [tree insertValue:@1];
+    [tree insertValue:@4];
+    [tree insertValue:@6];
+    [tree insertValue:@8];
+    
+    BOOL complete = [tree isBinaryTreeComplete];
+    
+    XCTAssert(complete);
+}
+
+- (void)testTreeCompleteVariantTwo {
+    MMBinaryTree *tree = [[MMBinaryTree alloc] init];
+    [tree insertValue:@5];
+    [tree insertValue:@3];
+    [tree insertValue:@7];
+    [tree insertValue:@1];
+    [tree insertValue:@4];
+    [tree insertValue:@6];
+    
+    BOOL complete = [tree isBinaryTreeComplete];
+    
+    XCTAssert(complete);
+}
+
+- (void)testTreeNotComplete {
+    MMBinaryTree *tree = [[MMBinaryTree alloc] init];
+    [tree insertValue:@5];
+    [tree insertValue:@3];
+    [tree insertValue:@7];
+    [tree insertValue:@4];
+    [tree insertValue:@6];
+    [tree insertValue:@8];
+    
+    BOOL complete = [tree isBinaryTreeComplete];
+    
+    XCTAssert(!complete);
+}
+
+- (void)testLevelOrder {
+    MMBinaryTree *tree = [[MMBinaryTree alloc] init];
+    [tree insertValue:@5];
+    [tree insertValue:@3];
+    [tree insertValue:@7];
+    [tree insertValue:@1];
+    [tree insertValue:@4];
+    [tree insertValue:@6];
+    [tree insertValue:@8];
+    
+    NSArray *levelOrder = [tree levelOrder];
+    NSArray *target = @[@[@5], @[@3, @7], @[@1, @4, @6, @8]];
+    XCTAssertEqualObjects(levelOrder, target);
+}
+
+- (void)testAveragesForEachLevel {
+    MMBinaryTree *tree = [[MMBinaryTree alloc] init];
+    [tree insertValue:@5];
+    [tree insertValue:@3];
+    [tree insertValue:@7];
+    [tree insertValue:@1];
+    [tree insertValue:@4];
+    [tree insertValue:@6];
+    [tree insertValue:@8];
+    
+    NSArray *averages = [tree integerAverageOfEachLevel];
+    NSArray *target = @[@5, @5, @4];
+    XCTAssertEqualObjects(averages, target);
+}
+
+- (void)testTreeMappingFunction {
+    MMBinaryTree *tree = [[MMBinaryTree alloc] init];
+    [tree insertValue:@5];
+    [tree insertValue:@3];
+    [tree insertValue:@7];
+    [tree insertValue:@1];
+    [tree insertValue:@4];
+    [tree insertValue:@6];
+    [tree insertValue:@8];
+    
+    [tree treeMap:^NSNumber *(NSNumber *obj) {
+        return [NSNumber numberWithInteger:obj.integerValue*2];
+    }];
+    
+    NSArray *inOrder = [tree inOrderTraversal];
+    NSArray *target = @[@2, @6, @8, @10, @12, @14, @16];
+    XCTAssertEqualObjects(inOrder, target);
+}
+
 @end

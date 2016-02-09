@@ -9,6 +9,7 @@
 #import "MMBinaryTree.h"
 #import "MMBinaryTreeNode.h"
 #import "NSArray+MMSorting.h"
+#import "MMQueue.h"
 
 @interface MMBinaryTree ()
 @property (nonatomic, strong) MMBinaryTreeNode *root;
@@ -157,6 +158,83 @@
     
     
     return mergedDictionary;
+}
+
+- (BOOL)isBinaryTreeComplete {
+    if(!self.root) {
+        return YES;
+    }
+    
+    MMQueue *queue = [MMQueue queue];
+    [queue push:self.root];
+    while(queue.size > 0) {
+        MMBinaryTreeNode *node = [queue pop];
+        if([node isEqual:[NSNull null]]) {
+            break;
+        }
+        
+        [queue push:node.leftChild ?: [NSNull null]];
+        [queue push:node.rightChild ?: [NSNull null]];
+    }
+    
+    return [[queue arrayRepresentation] indexOfObject:[NSNull null]] != NSNotFound;
+}
+
+- (NSArray <NSArray *> *)levelOrder {
+    if(!self.root) {
+        return @[];
+    }
+    
+    NSMutableArray *levelOrder = [NSMutableArray array];
+    NSMutableArray *nodesOnCurrentLevel = [NSMutableArray array];
+    
+    MMQueue *currentLevel = [MMQueue queue];
+    MMQueue *nextLevel = [MMQueue queue];
+    
+    [currentLevel push:self.root];
+    while (currentLevel.size > 0) {
+        MMBinaryTreeNode *node = [currentLevel pop];
+        [nodesOnCurrentLevel addObject:node.value];
+        [nextLevel push:node.leftChild];
+        [nextLevel push:node.rightChild];
+        
+        if(currentLevel.size == 0) {
+            [levelOrder addObject:nodesOnCurrentLevel];
+            nodesOnCurrentLevel = [NSMutableArray array];
+            MMQueue *temp = currentLevel;
+            currentLevel = nextLevel;
+            nextLevel = temp;
+        }
+    }
+    
+    return levelOrder;
+}
+
+- (NSArray <NSNumber *> *)integerAverageOfEachLevel {
+    NSArray  *levelOrder = [self levelOrder];
+    NSMutableArray *averages = [NSMutableArray array];
+    for(NSArray *level in levelOrder) {
+        NSInteger sum = 0;
+        for(id value in level) {
+            sum += [value integerValue];
+        }
+        [averages addObject:@(sum/level.count)];
+    }
+    return averages;
+}
+
+- (void)treeMap:(MMBinaryTreeMapAction)mapAction {
+    MMQueue *currentLevel = [MMQueue queue];
+    [currentLevel push:self.root];
+    while(currentLevel.size > 0) {
+        MMBinaryTreeNode *node = [currentLevel pop];
+        if(node.value) {
+            node.value = mapAction(node.value);
+        }
+        
+        [currentLevel push:node.leftChild];
+        [currentLevel push:node.rightChild];
+    }
 }
 
 @end

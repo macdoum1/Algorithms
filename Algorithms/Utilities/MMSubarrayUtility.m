@@ -88,6 +88,29 @@
     return isIncreasing;
 }
 
++ (NSArray *)longestIncreasingSubarray:(NSArray *)array {
+    NSInteger maxLength = 1;
+    NSInteger startOfSubarray = 0;
+    NSInteger currentMaxLength = 1;
+    id prevValue = array.firstObject;
+    for(NSInteger i=1; i<array.count; i++) {
+        if([array[i] compare:prevValue] == NSOrderedDescending) {
+            currentMaxLength++;
+        } else {
+            currentMaxLength = 1;
+        }
+        
+        if(currentMaxLength > maxLength) {
+            maxLength = currentMaxLength;
+            startOfSubarray = i - maxLength + 1;
+        }
+        
+        prevValue = array[i];
+    }
+    
+    return [array subarrayWithRange:NSMakeRange(startOfSubarray, maxLength)];
+}
+
 #pragma mark - Elements whose sum totals
 + (NSArray <NSNumber *> *)findThreeElementsInArray:(NSArray <NSNumber *> *)array
                                     whoseSumEquals:(NSInteger)sum {
@@ -164,5 +187,54 @@
         }
     }
     return triplets;
+}
+
++ (NSArray <NSArray *> *)allPairsFromArray:(NSArray <NSNumber *> *)array
+                            whoseSumEquals:(NSInteger)sum
+                             useDictionary:(BOOL)useDictionary {
+    if(useDictionary) {
+        
+        // Build dictionary with values
+        NSMutableDictionary *dict = [NSMutableDictionary dictionary];
+        for(NSNumber *number in array) {
+            // a + number = sum
+            // sum - number = b = key
+            NSInteger key = sum - number.integerValue;
+            dict[@(key)] = number;
+        }
+        
+        NSMutableArray *pairs = [NSMutableArray array];
+        
+        NSMutableArray *mutArray = [array mutableCopy];
+        for(NSInteger i=0; i<mutArray.count; i++) {
+            NSNumber *keyNumber = mutArray[i];
+            NSNumber *otherNumber = dict[keyNumber];
+            if(otherNumber) {
+                [pairs addObject:@[keyNumber, otherNumber]];
+//                [mutArray removeObject:keyNumber];
+            }
+        }
+        
+        return pairs;
+        
+    } else {
+        NSMutableArray *pairs = [@[] mutableCopy];
+        NSArray <NSNumber *> *sorted = [array sortedArrayWithType:MMSortTypeQuick];
+        
+        NSInteger left = 0;
+        NSInteger right = sorted.count-1;
+        while(left<right) {
+            NSInteger currentSum = sorted[left].integerValue + sorted[right].integerValue;
+            if(currentSum > sum) {
+                right--;
+            } else {
+                if(currentSum == sum) {
+                    [pairs addObject:@[sorted[left], sorted[right]]];
+                }
+                left++;
+            }
+        }
+        return pairs;
+    }
 }
 @end

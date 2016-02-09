@@ -45,4 +45,8 @@
 - (NSInteger)size {
     return self.queue.count;
 }
+
+- (NSArray *)arrayRepresentation {
+    return self.queue;
+}
 @end

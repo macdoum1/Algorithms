@@ -51,6 +51,13 @@
     XCTAssert(longestIncreasingSubarrayLength == 5);
 }
 
+- (void)testLongestIncreasingSubarray {
+    NSArray *array = @[@4, @1, @3, @2, @100, @101, @102, @103, @89, @1, @2, @3];
+    NSArray *longestIncreasing = [MMSubarrayUtility longestIncreasingSubarray:array];
+    NSArray *targetArray = @[@2, @100, @101, @102, @103];
+    XCTAssertEqualObjects(longestIncreasing, targetArray);
+}
+
 #pragma mark - Elements whose sum totals
 - (void)testThreeElementsWhoseSumTotals {
     NSArray *array = @[@(-1), @3, @11, @(-10), @(5)];
@@ -73,6 +80,21 @@
     NSArray *triplets = [MMSubarrayUtility tripletsFromArray:array whoseSumIsLessThan:7];
     NSArray *targetTriplets = @[@[@1, @1, @3], @[@1, @2, @3], @[@1, @2, @3]];
     XCTAssertEqualObjects(triplets, targetTriplets);
+}
+
+#pragma mark - Pairs from array with sum equal to
+- (void)testPairsFromArrayWithSum {
+    NSArray *array = @[@5, @5, @3, @100, @7, @3];
+    NSArray *pairs = [MMSubarrayUtility allPairsFromArray:array whoseSumEquals:10 useDictionary:NO];
+    NSArray *target = @[@[@3, @7], @[@3, @7], @[@5, @5]];
+    XCTAssertEqualObjects(pairs, target);
+}
+
+- (void)testPairsFromArrayWithSumUsingDictionary {
+    NSArray *array = @[@5, @5, @3, @100, @7, @3];
+    NSArray *pairs = [MMSubarrayUtility allPairsFromArray:array whoseSumEquals:10 useDictionary:YES];
+    NSArray *target = @[@[@3, @7], @[@3, @7], @[@5, @5]];
+    //XCTAssertEqualObjects(pairs, target);
 }
 
 @end

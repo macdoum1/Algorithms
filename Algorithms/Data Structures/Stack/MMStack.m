@@ -39,7 +39,7 @@
 }
 
 - (id)peek {
-    return self.stack[self.size-1];
+    return self.stack.lastObject;
 }
 
 - (NSInteger)size {

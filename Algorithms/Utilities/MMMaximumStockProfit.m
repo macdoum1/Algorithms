@@ -14,8 +14,8 @@
     NSDecimalNumber *currentMinBuy = valuesOverTime.firstObject;
     NSDecimalNumber *maxProfit = [NSDecimalNumber minimumDecimalNumber];
     
-    NSNumber *buyIdx;
-    NSNumber *sellIdx;
+    NSNumber *buyIdx = @(0);
+    NSNumber *sellIdx = @(0);
     for(NSInteger i=1; i<valuesOverTime.count; i++) {
         NSDecimalNumber *profit = [valuesOverTime[i] decimalNumberBySubtracting:currentMinBuy];
         if([maxProfit compare:profit] == NSOrderedAscending) {

@@ -27,7 +27,7 @@
     
     NSInteger count = 0;
     NSInteger current = numerator;
-    while(current >= denominator) {
+    while(current >= denominator) { 
         current -= denominator;
         count++;
     }

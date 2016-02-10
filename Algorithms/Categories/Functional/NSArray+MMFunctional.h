@@ -14,4 +14,5 @@ typedef id(^MMFunctionalMapBlock)(id obj);
 - (NSArray *)flattenArray;
 - (NSArray *)map:(MMFunctionalMapBlock)action;
 - (NSArray *)arrayByRemovingDuplicates;
+- (BOOL)hasDuplicates;
 @end

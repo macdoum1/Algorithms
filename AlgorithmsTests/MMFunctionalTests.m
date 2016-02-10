@@ -67,4 +67,15 @@
     XCTAssertEqualObjects(dupesRemoved, targetArray);
 }
 
+#pragma mark - Checking for duplicates
+- (void)testHasDuplicates {
+    NSArray *array = @[@1, @2, @3, @4, @3, @5];
+    XCTAssert([array hasDuplicates]);
+}
+
+- (void)testNoDuplicates {
+    NSArray *array = @[@1, @2, @3, @4];
+    XCTAssert(![array hasDuplicates]);
+}
+
 @end

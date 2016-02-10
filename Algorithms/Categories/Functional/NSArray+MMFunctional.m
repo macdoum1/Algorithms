@@ -38,4 +38,9 @@
 - (NSArray *)arrayByRemovingDuplicates {
     return [[[NSOrderedSet alloc] initWithArray:self] array];
 }
+
+- (BOOL)hasDuplicates {
+    NSOrderedSet *set = [[NSOrderedSet alloc] initWithArray:self];
+    return set.count != self.count;
+}
 @end

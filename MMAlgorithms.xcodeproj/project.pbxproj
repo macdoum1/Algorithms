@@ -22,6 +22,10 @@
 		D8468E441C67ED6A000E10D2 /* MMArrayAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = D8468E411C67ED6A000E10D2 /* MMArrayAddition.m */; };
 		D8468E451C67ED6A000E10D2 /* MMMaximumStockProfit.m in Sources */ = {isa = PBXBuildFile; fileRef = D8468E431C67ED6A000E10D2 /* MMMaximumStockProfit.m */; };
 		D8468E481C67EDB5000E10D2 /* NSString+MMCompression.m in Sources */ = {isa = PBXBuildFile; fileRef = D8468E471C67EDB5000E10D2 /* NSString+MMCompression.m */; };
+		D8468ED81C6C04BE000E10D2 /* NSArray+MMLargestSmallest.m in Sources */ = {isa = PBXBuildFile; fileRef = D8468ED71C6C04BE000E10D2 /* NSArray+MMLargestSmallest.m */; };
+		D8468EDA1C6C04E3000E10D2 /* MMLargestSmallestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D8468ED91C6C04E3000E10D2 /* MMLargestSmallestTests.m */; };
+		D8468EDD1C6CC655000E10D2 /* MMSequenceFormer.m in Sources */ = {isa = PBXBuildFile; fileRef = D8468EDC1C6CC655000E10D2 /* MMSequenceFormer.m */; };
+		D8468EDF1C6CC665000E10D2 /* MMSequenceFormerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D8468EDE1C6CC665000E10D2 /* MMSequenceFormerTests.m */; };
 		D84EB0A81C60E83400B86EC0 /* MMLinkedListTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D84EB0A71C60E83400B86EC0 /* MMLinkedListTests.m */; };
 		D88C738B1C5AABED00E9217B /* MMSearchTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D88C738A1C5AABED00E9217B /* MMSearchTests.m */; };
 		D88C73AF1C5ACE4B00E9217B /* MMTreeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D88C73AE1C5ACE4B00E9217B /* MMTreeTests.m */; };
@@ -72,6 +76,12 @@
 		D8468E431C67ED6A000E10D2 /* MMMaximumStockProfit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MMMaximumStockProfit.m; path = Utilities/MMMaximumStockProfit.m; sourceTree = "<group>"; };
 		D8468E461C67EDB5000E10D2 /* NSString+MMCompression.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+MMCompression.h"; path = "Categories/Misc String Algorithms/NSString+MMCompression.h"; sourceTree = "<group>"; };
 		D8468E471C67EDB5000E10D2 /* NSString+MMCompression.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+MMCompression.m"; path = "Categories/Misc String Algorithms/NSString+MMCompression.m"; sourceTree = "<group>"; };
+		D8468ED61C6C04BE000E10D2 /* NSArray+MMLargestSmallest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+MMLargestSmallest.h"; sourceTree = "<group>"; };
+		D8468ED71C6C04BE000E10D2 /* NSArray+MMLargestSmallest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+MMLargestSmallest.m"; sourceTree = "<group>"; };
+		D8468ED91C6C04E3000E10D2 /* MMLargestSmallestTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMLargestSmallestTests.m; sourceTree = "<group>"; };
+		D8468EDB1C6CC655000E10D2 /* MMSequenceFormer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMSequenceFormer.h; sourceTree = "<group>"; };
+		D8468EDC1C6CC655000E10D2 /* MMSequenceFormer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMSequenceFormer.m; sourceTree = "<group>"; };
+		D8468EDE1C6CC665000E10D2 /* MMSequenceFormerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMSequenceFormerTests.m; sourceTree = "<group>"; };
 		D84EB0A71C60E83400B86EC0 /* MMLinkedListTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMLinkedListTests.m; sourceTree = "<group>"; };
 		D88C738A1C5AABED00E9217B /* MMSearchTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMSearchTests.m; sourceTree = "<group>"; };
 		D88C73AE1C5ACE4B00E9217B /* MMTreeTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMTreeTests.m; sourceTree = "<group>"; };
@@ -144,6 +154,8 @@
 				D8468DF61C617FFF000E10D2 /* MMSubarrayUtility.m */,
 				27A045C51C682A3000AEE54D /* MMDivisionUtility.h */,
 				27A045C61C682A3000AEE54D /* MMDivisionUtility.m */,
+				D8468EDB1C6CC655000E10D2 /* MMSequenceFormer.h */,
+				D8468EDC1C6CC655000E10D2 /* MMSequenceFormer.m */,
 			);
 			name = Utilities;
 			sourceTree = "<group>";
@@ -187,6 +199,8 @@
 				D88C73BE1C5BB24A00E9217B /* NSArray+MMSearch.m */,
 				D88C73BF1C5BB24A00E9217B /* NSArray+MMSorting.h */,
 				D88C73C01C5BB24A00E9217B /* NSArray+MMSorting.m */,
+				D8468ED61C6C04BE000E10D2 /* NSArray+MMLargestSmallest.h */,
+				D8468ED71C6C04BE000E10D2 /* NSArray+MMLargestSmallest.m */,
 			);
 			name = "Searching & Sorting";
 			sourceTree = "<group>";
@@ -326,6 +340,8 @@
 				D8468E251C64129C000E10D2 /* MMStringCompressionTests.m */,
 				D8468E2A1C64478D000E10D2 /* MMMaximumStockProfitTests.m */,
 				27A045C81C682B0600AEE54D /* MMDivisionUtilityTests.m */,
+				D8468ED91C6C04E3000E10D2 /* MMLargestSmallestTests.m */,
+				D8468EDE1C6CC665000E10D2 /* MMSequenceFormerTests.m */,
 			);
 			name = "Category Tests";
 			sourceTree = "<group>";
@@ -408,7 +424,10 @@
 				D88C73C21C5BB24A00E9217B /* NSArray+MMSorting.m in Sources */,
 				D88C73C81C5BB28300E9217B /* NSString+MMNearbyWords.m in Sources */,
 				D8468E2B1C64478D000E10D2 /* MMMaximumStockProfitTests.m in Sources */,
+				D8468ED81C6C04BE000E10D2 /* NSArray+MMLargestSmallest.m in Sources */,
+				D8468EDD1C6CC655000E10D2 /* MMSequenceFormer.m in Sources */,
 				D8F6926F1C5A966D00B08CB5 /* MMRandomArrayTests.m in Sources */,
+				D8468EDF1C6CC665000E10D2 /* MMSequenceFormerTests.m in Sources */,
 				D8468DF01C6176D2000E10D2 /* MMSubarrayUtilityTests.m in Sources */,
 				D8F692711C5A970500B08CB5 /* MMRandomNumberTests.m in Sources */,
 				D8468E261C64129C000E10D2 /* MMStringCompressionTests.m in Sources */,
@@ -423,6 +442,7 @@
 				27A045C71C682A3000AEE54D /* MMDivisionUtility.m in Sources */,
 				D88C73AF1C5ACE4B00E9217B /* MMTreeTests.m in Sources */,
 				D88C73CA1C5BB35C00E9217B /* MMNearbyWordsTests.m in Sources */,
+				D8468EDA1C6C04E3000E10D2 /* MMLargestSmallestTests.m in Sources */,
 				D88C73C11C5BB24A00E9217B /* NSArray+MMSearch.m in Sources */,
 				D8468E481C67EDB5000E10D2 /* NSString+MMCompression.m in Sources */,
 				D8D92F0E1C6032AB00C7A86C /* MMBinaryTree.m in Sources */,

@@ -21,19 +21,19 @@
     self = [super init];
     if(self) {
         self.heap = [NSMutableArray array];
-        [self.heap insertObject:@(-NSIntegerMin) atIndex:0];
+        [self.heap insertObject:@(NSIntegerMin) atIndex:0];
     }
     return self;
 }
 
-- (void)insertNumber:(NSNumber *)number {
-    [self.heap addObject:number];
-    for(NSInteger i=self.heap.count-1; [number doubleValue] < [self.heap[i/2] doubleValue]; i /= 2) {
+- (void)insertObject:(id)obj {
+    [self.heap addObject:obj];
+    for(NSInteger i=self.heap.count-1; [obj doubleValue] < [self.heap[i/2] doubleValue]; i /= 2) {
         [self.heap exchangeObjectAtIndex:i withObjectAtIndex:i/2];
     }
 }
 
-- (NSNumber *)deleteMin {
+- (id)deleteMin {
     if(self.isEmpty) {
         return nil;
     }

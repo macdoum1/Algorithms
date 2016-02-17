@@ -19,14 +19,14 @@
 - (void)testSimpleMinHeap {
     MMMinHeap *minHeap = [MMMinHeap heap];
     
-    [minHeap insertNumber:@2];
-    [minHeap insertNumber:@10];
-    [minHeap insertNumber:@1];
-    [minHeap insertNumber:@8];
-    [minHeap insertNumber:@7];
-    [minHeap insertNumber:@(-53)];
-    [minHeap insertNumber:@100];
-    [minHeap insertNumber:@0];
+    [minHeap insertObject:@2];
+    [minHeap insertObject:@10];
+    [minHeap insertObject:@1];
+    [minHeap insertObject:@8];
+    [minHeap insertObject:@7];
+    [minHeap insertObject:@(-53)];
+    [minHeap insertObject:@100];
+    [minHeap insertObject:@0];
     
     NSMutableArray *results = [NSMutableArray array];
     while(!minHeap.isEmpty) {

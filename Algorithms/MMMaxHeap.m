@@ -26,14 +26,14 @@
     return self;
 }
 
-- (void)insertNumber:(NSNumber *)number {
-    [self.heap addObject:number];
-    for(NSInteger i=self.heap.count-1; [number doubleValue] > [self.heap[i/2] doubleValue]; i /= 2) {
+- (void)insertObject:(id)object {
+    [self.heap addObject:object];
+    for(NSInteger i=self.heap.count-1; [object doubleValue] > [self.heap[i/2] doubleValue]; i /= 2) {
         [self.heap exchangeObjectAtIndex:i withObjectAtIndex:i/2];
     }
 }
 
-- (NSNumber *)deleteMax {
+- (id)deleteMax {
     if(self.isEmpty) {
         return nil;
     }

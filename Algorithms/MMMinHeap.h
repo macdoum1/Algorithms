@@ -10,7 +10,7 @@
 
 @interface MMMinHeap : NSObject
 + (instancetype)heap;
-- (void)insertNumber:(NSNumber *)number;
-- (NSNumber *)deleteMin;
+- (void)insertObject:(id)obj;
+- (id)deleteMin;
 - (BOOL)isEmpty;
 @end

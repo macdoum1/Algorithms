@@ -10,7 +10,7 @@
 
 @interface MMMaxHeap : NSObject
 + (instancetype)heap;
-- (void)insertNumber:(NSNumber *)number;
-- (NSNumber *)deleteMax;
+- (void)insertObject:(id)object;
+- (id)deleteMax;
 - (BOOL)isEmpty;
 @end

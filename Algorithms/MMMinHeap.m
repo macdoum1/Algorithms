@@ -33,6 +33,13 @@
     }
 }
 
+- (id)getMin {
+    if(self.isEmpty) {
+        return nil;
+    }
+    return self.heap[1];
+}
+
 - (id)deleteMin {
     if(self.isEmpty) {
         return nil;
@@ -40,7 +47,7 @@
     
     NSInteger child, i;
     
-    NSNumber *minNum = [self.heap[1] copy];
+    NSNumber *minNum = [self getMin];
     NSNumber *lastNum = self.heap.lastObject;
     for(i=1; i*2 <= self.heap.count-1; i = child) {
         child = i * 2;

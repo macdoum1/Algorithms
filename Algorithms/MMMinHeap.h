@@ -8,9 +8,10 @@
 
 #import <Foundation/Foundation.h>
 
-@interface MMMinHeap : NSObject
+@interface MMMinHeap <__covariant ObjectType> : NSObject
 + (instancetype)heap;
-- (void)insertObject:(id)obj;
-- (id)deleteMin;
+- (void)insertObject:(ObjectType)obj;
+- (ObjectType)getMin;
+- (ObjectType)deleteMin;
 - (BOOL)isEmpty;
 @end

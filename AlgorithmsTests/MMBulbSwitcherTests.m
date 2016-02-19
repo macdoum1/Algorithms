@@ -24,11 +24,12 @@
 - (void)test5BulbSwitcher {
     NSInteger bulbsOn = [MMBulbSwitcher numberOfBulbsOnFromTotal:10];
     XCTAssert(bulbsOn == 5);
-    // 1 1 1 1 1 1 1 1 1 1
+    // 1 1 1 1 1 1 1 1 1 1 // First Round
     // 0 1 2 3 4 5 6 7 8 9
     //
-    // 1 0 1 0 1 0 1 0 1 0
-    // 1 0 1 0 1 1 1 0 0 1
+    // 1 0 1 0 1 0 1 0 1 0 // Second Round
+    //
+    // 1 0 1 0 1 1 1 0 0 1 // Third Round
 }
 
 @end

@@ -37,8 +37,8 @@
 		D87304CB1C7754090078D083 /* MMMaxHeap.m in Sources */ = {isa = PBXBuildFile; fileRef = D87304C81C7754090078D083 /* MMMaxHeap.m */; };
 		D87304CC1C7754090078D083 /* MMMinHeap.m in Sources */ = {isa = PBXBuildFile; fileRef = D87304CA1C7754090078D083 /* MMMinHeap.m */; };
 		D87304CF1C7754140078D083 /* NSArray+MMLargestSmallest.m in Sources */ = {isa = PBXBuildFile; fileRef = D87304CE1C7754140078D083 /* NSArray+MMLargestSmallest.m */; };
-		D87304D21C7754C40078D083 /* MMBulbSwitcher.m in Sources */ = {isa = PBXBuildFile; fileRef = D87304D11C7754C40078D083 /* MMBulbSwitcher.m */; };
 		D87304D41C7754D40078D083 /* MMBulbSwitcherTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D87304D31C7754D40078D083 /* MMBulbSwitcherTests.m */; };
+		D87304D71C7758430078D083 /* MMBulbSwitcher.m in Sources */ = {isa = PBXBuildFile; fileRef = D87304D61C7758430078D083 /* MMBulbSwitcher.m */; };
 		D88C738B1C5AABED00E9217B /* MMSearchTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D88C738A1C5AABED00E9217B /* MMSearchTests.m */; };
 		D88C73AF1C5ACE4B00E9217B /* MMTreeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D88C73AE1C5ACE4B00E9217B /* MMTreeTests.m */; };
 		D88C73B61C5BB23C00E9217B /* NSArray+MMFunctional.m in Sources */ = {isa = PBXBuildFile; fileRef = D88C73B51C5BB23C00E9217B /* NSArray+MMFunctional.m */; };
@@ -110,9 +110,9 @@
 		D87304CA1C7754090078D083 /* MMMinHeap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MMMinHeap.m; path = "Data Structures/Heap/MMMinHeap.m"; sourceTree = "<group>"; };
 		D87304CD1C7754140078D083 /* NSArray+MMLargestSmallest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSArray+MMLargestSmallest.h"; path = "Categories/Searching & Sorting/NSArray+MMLargestSmallest.h"; sourceTree = "<group>"; };
 		D87304CE1C7754140078D083 /* NSArray+MMLargestSmallest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSArray+MMLargestSmallest.m"; path = "Categories/Searching & Sorting/NSArray+MMLargestSmallest.m"; sourceTree = "<group>"; };
-		D87304D01C7754C40078D083 /* MMBulbSwitcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMBulbSwitcher.h; sourceTree = "<group>"; };
-		D87304D11C7754C40078D083 /* MMBulbSwitcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMBulbSwitcher.m; sourceTree = "<group>"; };
 		D87304D31C7754D40078D083 /* MMBulbSwitcherTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMBulbSwitcherTests.m; sourceTree = "<group>"; };
+		D87304D51C7758430078D083 /* MMBulbSwitcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MMBulbSwitcher.h; path = Utilities/MMBulbSwitcher.h; sourceTree = "<group>"; };
+		D87304D61C7758430078D083 /* MMBulbSwitcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MMBulbSwitcher.m; path = Utilities/MMBulbSwitcher.m; sourceTree = "<group>"; };
 		D88C738A1C5AABED00E9217B /* MMSearchTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMSearchTests.m; sourceTree = "<group>"; };
 		D88C73AE1C5ACE4B00E9217B /* MMTreeTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMTreeTests.m; sourceTree = "<group>"; };
 		D88C73B41C5BB23C00E9217B /* NSArray+MMFunctional.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSArray+MMFunctional.h"; path = "Categories/Functional/NSArray+MMFunctional.h"; sourceTree = "<group>"; };
@@ -190,8 +190,8 @@
 				D87304BE1C7753F20078D083 /* MMMatrixSearch.m */,
 				D87304BF1C7753F20078D083 /* MMSequenceFormer.h */,
 				D87304C01C7753F20078D083 /* MMSequenceFormer.m */,
-				D87304D01C7754C40078D083 /* MMBulbSwitcher.h */,
-				D87304D11C7754C40078D083 /* MMBulbSwitcher.m */,
+				D87304D51C7758430078D083 /* MMBulbSwitcher.h */,
+				D87304D61C7758430078D083 /* MMBulbSwitcher.m */,
 			);
 			name = Utilities;
 			sourceTree = "<group>";
@@ -481,6 +481,7 @@
 				D8F6926F1C5A966D00B08CB5 /* MMRandomArrayTests.m in Sources */,
 				D8468EDF1C6CC665000E10D2 /* MMSequenceFormerTests.m in Sources */,
 				D85BF2771C7364DF004558B5 /* MMMaxHeapTests.m in Sources */,
+				D87304D71C7758430078D083 /* MMBulbSwitcher.m in Sources */,
 				D8468DF01C6176D2000E10D2 /* MMSubarrayUtilityTests.m in Sources */,
 				D8F692711C5A970500B08CB5 /* MMRandomNumberTests.m in Sources */,
 				D8468E261C64129C000E10D2 /* MMStringCompressionTests.m in Sources */,
@@ -498,7 +499,6 @@
 				27A045C91C682B0600AEE54D /* MMDivisionUtilityTests.m in Sources */,
 				27A045C71C682A3000AEE54D /* MMDivisionUtility.m in Sources */,
 				D88C73AF1C5ACE4B00E9217B /* MMTreeTests.m in Sources */,
-				D87304D21C7754C40078D083 /* MMBulbSwitcher.m in Sources */,
 				D88C73CA1C5BB35C00E9217B /* MMNearbyWordsTests.m in Sources */,
 				D8468EDA1C6C04E3000E10D2 /* MMLargestSmallestTests.m in Sources */,
 				D88C73C11C5BB24A00E9217B /* NSArray+MMSearch.m in Sources */,

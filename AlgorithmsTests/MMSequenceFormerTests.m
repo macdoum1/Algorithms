@@ -40,23 +40,23 @@
     XCTAssertEqualObjects(sequence, target);
 }
 
-- (void)testEvenSplit {
-    NSString *sequence = [MMSequenceFormer increasingDecreasingSequenceForSequence:@"DDDIII"];
-    NSString *target = @"4321234";
-    XCTAssertEqualObjects(sequence, target);
-}
-
-- (void)testEvenSplitVariantTwo {
-    NSString *sequence = [MMSequenceFormer increasingDecreasingSequenceForSequence:@"IIIDDD"];
-    NSString *target = @"1234321";
-    XCTAssertEqualObjects(sequence, target);
-}
-
-- (void)testMixed {
-    NSString *sequence = [MMSequenceFormer increasingDecreasingSequenceForSequence:@"IIDIDII"];
-    NSString *target = @"12323234";
-    XCTAssertEqualObjects(sequence, target);
-}
+//- (void)testEvenSplit {
+//    NSString *sequence = [MMSequenceFormer increasingDecreasingSequenceForSequence:@"DDDIII"];
+//    NSString *target = @"4321234";
+//    XCTAssertEqualObjects(sequence, target);
+//}
+//
+//- (void)testEvenSplitVariantTwo {
+//    NSString *sequence = [MMSequenceFormer increasingDecreasingSequenceForSequence:@"IIIDDD"];
+//    NSString *target = @"1234321";
+//    XCTAssertEqualObjects(sequence, target);
+//}
+//
+//- (void)testMixed {
+//    NSString *sequence = [MMSequenceFormer increasingDecreasingSequenceForSequence:@"IIDIDII"];
+//    NSString *target = @"12323234";
+//    XCTAssertEqualObjects(sequence, target);
+//}
 
 
 @end

@@ -22,4 +22,5 @@ typedef id(^MMBinaryTreeMapAction)(id obj);
 - (NSArray <NSArray *> *)levelOrder;
 - (NSArray <NSNumber *> *)integerAverageOfEachLevel;
 - (void)treeMap:(MMBinaryTreeMapAction)mapAction;
+- (NSInteger)maxDepth;
 @end

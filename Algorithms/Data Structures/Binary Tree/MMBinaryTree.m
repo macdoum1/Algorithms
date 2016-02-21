@@ -237,4 +237,24 @@
     }
 }
 
+- (NSInteger)maxDepth {
+    NSInteger depth = 0;
+    MMQueue *currentLevel = [MMQueue queue];
+    MMQueue *nextLevel = [MMQueue queue];
+    [currentLevel push:self.root];
+    while(currentLevel.size > 0) {
+        MMBinaryTreeNode *node = [currentLevel pop];
+        [nextLevel push:node.leftChild];
+        [nextLevel push:node.rightChild];
+        
+        if(currentLevel.size == 0) {
+            MMQueue *temp = currentLevel;
+            currentLevel = nextLevel;
+            nextLevel = temp;
+            depth++;
+        }
+    }
+    return depth;
+}
+
 @end

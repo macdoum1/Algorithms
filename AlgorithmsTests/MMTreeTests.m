@@ -204,4 +204,21 @@
     XCTAssertEqualObjects(inOrder, target);
 }
 
+- (void)testTreeDepth {
+    MMBinaryTree *tree = [[MMBinaryTree alloc] init];
+    [tree insertValue:@10];
+    [tree insertValue:@11];
+    [tree insertValue:@12];
+    [tree insertValue:@13];
+    [tree insertValue:@14];
+    [tree insertValue:@15];
+    [tree insertValue:@8];
+    [tree insertValue:@4];
+    [tree insertValue:@2];
+    
+    NSInteger depth = [tree maxDepth];
+    
+    XCTAssert(depth == 6);
+}
+
 @end

@@ -8,46 +8,46 @@
 
 #import "MMIntervalInsertion.h"
 
+#import "MMStack.h"
+
 @implementation MMIntervalInsertion
 + (NSArray <NSValue *> *)insertInterval:(NSRange)interval intoIntervals:(NSArray <NSValue *> *)intervals {
     NSMutableArray <NSValue *> *intervalsToReturn = [NSMutableArray arrayWithArray:intervals];
-    
-    for(NSInteger i=0; i<intervals.count; i++) {
-        NSRange currentRange = intervalsToReturn[i].rangeValue;
-        NSRange intersection = NSIntersectionRange(currentRange, interval);
-        if(intersection.length > 0) {
-            NSRange newRange = NSUnionRange(currentRange, interval);
-            intervalsToReturn[i] = [NSValue valueWithRange:newRange];
-        }
-    }
-    
+    [intervalsToReturn addObject:[NSValue valueWithRange:interval]];    
     return [self mergeRanges:intervalsToReturn];
 }
 
 + (NSArray <NSValue *> *)mergeRanges:(NSArray <NSValue *> *)ranges {
-    if(ranges.count < 2) {
-        return ranges;
+    ranges = [ranges sortedArrayUsingComparator:^NSComparisonResult(NSValue *obj1, NSValue *obj2) {
+        NSComparisonResult result = NSOrderedSame;
+        if(obj1.rangeValue.location < obj2.rangeValue.location) {
+            result = NSOrderedAscending;
+        } else if(obj1.rangeValue.location > obj2.rangeValue.location) {
+            result = NSOrderedDescending;
+        }
+        return result;
+    }];
+    
+    MMStack *stack = [MMStack stack];
+    [stack push:ranges.firstObject];
+    for(NSInteger i=1; i<ranges.count; i++) {
+        NSValue *stackValue = [stack peek];
+        NSRange rangeFromStack = stackValue.rangeValue;
+        NSRange currentRange = ranges[i].rangeValue;
+        if(NSIntersectionRange(rangeFromStack, currentRange).length == 0) {
+            [stack push:[NSValue valueWithRange:currentRange]];
+        } else {
+            [stack pop];
+            NSRange newRange = NSUnionRange(rangeFromStack, currentRange);
+            [stack push:[NSValue valueWithRange:newRange]];
+        }
     }
     
-    NSRange lastRange = ranges.lastObject.rangeValue;
-    NSRange secondLastRange = ranges[ranges.count-2].rangeValue;
-    
-    NSMutableArray *results = [NSMutableArray array];
-    NSRange newRange = NSUnionRange(lastRange, secondLastRange);
-    
-    if(NSIntersectionRange(lastRange, secondLastRange).length > 0) {
-        NSMutableArray *arraysToMerge = [NSMutableArray array];
-        NSArray *head = [ranges subarrayWithRange:NSMakeRange(0, ranges.count-2)];
-        [arraysToMerge addObjectsFromArray:head];
-        [arraysToMerge addObject:[NSValue valueWithRange:newRange]];
-        [results addObjectsFromArray:[self mergeRanges:arraysToMerge]];
-    } else {
-        NSArray *head = [ranges subarrayWithRange:NSMakeRange(0, ranges.count-1)];
-        [results addObjectsFromArray:[self mergeRanges:head]];
-        [results addObject:[NSValue valueWithRange:lastRange]];
+    NSMutableArray *merged = [NSMutableArray array];
+    while(stack.size > 0) {
+        [merged addObject:[stack pop]];
     }
-    
-    return results;
+    return [[merged reverseObjectEnumerator] allObjects];
 }
 
 @end
